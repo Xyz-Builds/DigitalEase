@@ -3,6 +3,11 @@
   padding: 0;
 }
 
+*::selection {
+  background-color: rgb(158, 198, 14);
+  color: black;
+}
+
 .ms {
   font-family: "Material Symbols Outlined";
   font-weight: normal;
@@ -20,4 +25,22 @@
 
 body {
   background-color: rgb(33, 36, 40);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f0d28;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #333060;
+  border-radius: 999em;
+  transition: background-color 0.2s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #d4f542;
 }

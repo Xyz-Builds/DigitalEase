@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="styles/pages/index.css" />
     <link rel="stylesheet" href="styles/general.css" />
     <link rel="stylesheet" href="styles/header.css" />
-    <link rel="icon" type="image/png" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" />
     <title>Hey there! - DigitalEase</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,18 +24,16 @@
     />
   </head>
   <body>
-    <header>
-      <img class="icon" src="images/DigitalEase logo.png" />
-    </header>
+    <header id="header"></header>
 
     <main>
       <section class="brief-intro">
         <h2>
-          <span class="ms">prompt_suggestion</span>Browse smart. Stay protected.
+          <span translate="no" class="ms">prompt_suggestion</span>Browse smart. Stay protected.
           Online safety made easy for everyone.
         </h2>
         <h1>Can't stay safe <span>online?</span></h1>
-        <h2 id="word"></h2>
+        <h2 translate="no" id="word"></h2>
 
         <hr class="divider" />
 
@@ -48,7 +46,7 @@
           </a>
           <a class="lm-a">
             <button class="lm">
-              Learn More <span class="ms lm-ms">arrow_outward</span>
+              Learn More <span class="ms lm-ms" translate="no">arrow_outward</span>
             </button>
           </a>
         </div>
@@ -273,8 +271,28 @@
             </div>
           </div>
        </section>
+
+       <section class="brief-outro1">
+        <h1 class="label">Built to <span>protect.</span></h1>
+        <h2 class="sub-label"><span>DigitalEase</span> is your guardian.</h2>
+        <div class="buttons">
+          <a class="cta-a">
+            <button class="cta">
+              <span>Get Started</span>
+              <span class="ms">arrow_forward</span>
+            </button>
+          </a>
+          <a class="lm-a">
+            <button class="lm">
+              Learn More <span class="ms lm-ms" translate="no">arrow_outward</span>
+            </button>
+          </a>
+        </div>
+        <h2 class="outro">Start browsing without <span>fear</span></h2>
+       </section>
     </main>
 
+    <script src="components/header.js"></script>
     <script src="scripts/typescript.js"></script>
   </body>
 </html>

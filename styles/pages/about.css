@@ -1,0 +1,48 @@
+main {
+  padding-top: clamp(3rem, 10vw + 1rem, 7rem);
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 50px;
+  gap: 4rem;
+}
+
+.vision .label {
+  font-family: Syne;
+  font-weight: 800;
+  margin: 0;
+  color: white;
+  text-align: center;
+}
+
+.vision {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.vision .title {
+  font-family: Syne;
+  text-transform: uppercase;
+  background: linear-gradient(to right, white, rgb(196, 241, 32), white);
+  background-size: 200% 100%;
+  animation: limeShift 2s ease-in-out infinite alternate;
+  font-weight: 800;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  white-space: nowrap;
+  font-size: clamp(35px, 22vw, 480px);
+  width: max-content;
+  position: relative;
+  left: 20%;
+  transform: translateX(-23%);
+}
+
+@keyframes limeShift {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 100% 0%;
+  }
+}

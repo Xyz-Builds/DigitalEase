@@ -1,21 +1,243 @@
 header {
   display: flex;
   align-items: center;
-  height: 50px;
+  justify-content: space-between;
+  height: 30px;
+  padding: 12px 32px;
   position: fixed;
-  padding-top: 5px;
-  background-color: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(100px) saturate(150%);
-  -webkit-backdrop-filter: blur(100px) saturate(150%);
-  z-index: 1000;
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.01);
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(120%) saturate(120%);
 }
 
 header .icon {
-  width: 120px;
+  height: 22px;
+  width: auto;
+}
+
+header .buttons {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 10px 28px;
+  border-radius: 999em;
+  background-color: rgba(30, 27, 60, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+header .buttons a {
+  color: rgba(255, 255, 255, 0.65);
+  font-family: Syne, sans-serif;
+  font-size: 15px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+header .buttons a:hover {
+  color: #ffffff;
+}
+
+header .sign-up-btn {
+  display: flex;
+  align-items: center;
+  padding: 9px 25px;
+  border-radius: 999em;
+  background-color: #d4f542;
+  color: #111;
+  font-family: Syne, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
   position: relative;
-  left: 20px;
-  height: 23px;
+  overflow: hidden;
+  transition:
+    background-color 0.2s,
+    transform 0.15s;
+}
+
+.sign-up-btn .ms {
+  transform: translateY(2px);
+  padding-left: 4px;
+}
+
+.sign-up-btn:before {
+  content: "";
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  inset: 0;
+  background: rgb(255, 255, 255);
+  transform: translateX(-101%);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sign-up-btn:hover::before {
+  transform: translateX(0);
+}
+
+.sign-up-btn span {
+  z-index: 2;
+}
+
+header .sign-up-btn .material-symbols-outlined {
+  font-size: 16px;
+}
+
+header .hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 27px;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+header .hamburger:hover {
+  color: rgb(171, 215, 12);
+}
+
+.mobile-menu {
+  display: flex;
+  position: fixed;
+  overflow: hidden;
+  height: fit-content;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  padding-bottom: 20px;
+  border-radius: 25px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  background: rgb(15, 13, 40);
+  backdrop-filter: blur(16px);
+  flex-direction: column;
+  gap: 2rem;
+  z-index: 9999;
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+}
+
+.mobile-menu .menu-a {
+  text-decoration: none;
+}
+
+.mobile-menu .menu-a .ms {
+  font-size: 20px;
+}
+
+.mobile-menu .sign-up-a .btn {
+  display: flex;
+  align-items: center;
+  width: fit-content !important;
+  gap: 6px;
+  padding: 8px 20px !important;
+  gap: 0.7rem !important;
+  justify-self: center;
+  white-space: nowrap;
+  border-radius: 999em;
+  background-color: hsl(104, 100%, 71%) !important;
+  color: #111 !important;
+  font-family: Syne, sans-serif;
+  font-size: 15px !important;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out !important;
+}
+
+.mobile-menu .sign-up-a .btn:hover {
+  transform: translateY(-5px);
+}
+
+.mobile-menu .menu-a .btn {
+  background-color: rgb(52, 52, 88);
+  display: flex;
+  gap: 5%;
+  align-items: center;
+  color: white;
+  border: none;
+  padding-inline: 15px;
+  padding-block: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  text-align: left;
+  width: 100%;
+  font-family: Syne;
+  font-weight: 700;
+  transition: filter 0.2s ease-in-out;
+}
+
+.mobile-menu .menu-a .btn:hover {
+  filter: brightness(1.2);
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+.mobile-menu.open body {
+  filter: brightness(0.5);
+}
+
+.account-divider {
+  width: 70%;
+  position: relative;
+  transform: translateX(-50%);
+  left: 50%;
+}
+
+.mobile-menu a:hover {
+  opacity: 1;
+}
+
+.mobile-menu .close-menu {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.mobile-menu .account-info {
+  padding-inline: 20px;
+  padding-block: 10px;
+  padding-bottom: 0;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  gap: 1rem;
+  font-family: Syne;
+  font-weight: 800;
+  color: white;
+}
+
+.mobile-menu .account-info .ms {
+  font-size: 45px;
+}
+
+@media (max-width: 700px) {
+  header .buttons,
+  header .sign-up-btn {
+    display: none;
+  }
+
+  header .hamburger {
+    display: block;
+  }
 }
