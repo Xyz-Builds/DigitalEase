@@ -1,5 +1,5 @@
 main {
-  padding-top: clamp(3rem, 10vw + 1rem, 7rem);
+  padding-top: clamp(3.5rem, 10vw + 1rem, 7rem);
   display: flex;
   flex-direction: column;
   padding-bottom: 50px;

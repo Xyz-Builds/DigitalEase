@@ -1,5 +1,5 @@
 main {
-  padding-top: clamp(3rem, 10vw + 1rem, 7rem);
+  padding-top: clamp(3.5rem, 10vw + 1rem, 7rem);
   display: flex;
   flex-direction: column;
   padding-bottom: 50px;
@@ -65,6 +65,10 @@ main {
 .policy p strong {
   color: rgb(196, 241, 32);
   font-family: Elms Sans;
+}
+
+a {
+  color: white;
 }
 
 @keyframes limeShift {

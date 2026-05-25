@@ -1,7 +1,9 @@
-const base = document.currentScript.src.substring(
-  0,
-  document.currentScript.src.lastIndexOf("components/"),
-);
+{
+  const base = document.currentScript.src.substring(
+    0,
+    document.currentScript.src.lastIndexOf("components/"),
+  );
+}
 
 document.getElementById("footer").innerHTML = `
   <div class="footer-grid">
