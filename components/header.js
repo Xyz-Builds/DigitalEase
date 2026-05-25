@@ -1,15 +1,15 @@
 document.getElementById("header").innerHTML = `
   <header>
     <a href="../../index.html" class="logo-link">
-      <img class="icon" src="../../images/DigitalEase logo.png" alt="DigitalEase" />
+      <img class="icon" src="../images/DigitalEase logo.png" alt="DigitalEase" />
     </a>
 
     <div class="buttons">
-      <a href="../../pages/about.html">About us</a>
-      <a href="../../pages/contact.html">Contact us</a>
+      <a href="../pages/about.html">About us</a>
+      <a href="../pages/contact.html">Contact us</a>
     </div>
 
-    <a href="../../pages/signup.html" class="sign-up-btn">
+    <a href="../pages/signup.html" class="sign-up-btn">
       <span>Sign up <span class="ms">arrow_forward</span></span>
     </a>
 
@@ -19,13 +19,13 @@ document.getElementById("header").innerHTML = `
       <div class="account-info">
         <span class="ms">account_circle</span> No account
       </div>
-      <a class="sign-up-a menu-a" href="../../pages/signup.html"><button class="btn"><span class="ms">person</span>Sign up</button></a>
+      <a class="sign-up-a menu-a" href="../pages/signup.html"><button class="btn"><span class="ms">person</span>Sign up</button></a>
       
       <hr class="account-divider">
       
       <div class="sec-btns">
-        <a class="about-a menu-a" href="../../pages/about.html"><button class="btn"><span class="ms">article_person</span>About us</button></a>
-        <a class="contact-a menu-a" href="../../pages/"><button class="btn"><span class="ms">chat</span>Contact us</button></a>
+        <a class="about-a menu-a" href="../pages/about.html"><button class="btn"><span class="ms">article_person</span>About us</button></a>
+        <a class="contact-a menu-a" href="../pages/"><button class="btn"><span class="ms">chat</span>Contact us</button></a>
       </div>
         </div>
   </header>
