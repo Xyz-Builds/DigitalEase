@@ -6,7 +6,7 @@ main {
   gap: 4rem;
 }
 
-.vision .label {
+.policy .label {
   font-family: Syne;
   font-weight: 800;
   margin: 0;
@@ -14,13 +14,13 @@ main {
   text-align: center;
 }
 
-.vision {
+.policy {
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
 
-.vision .title {
+.policy .title {
   font-family: Syne;
   text-transform: uppercase;
   background: linear-gradient(to right, white, rgb(196, 241, 32), white);
@@ -31,11 +31,11 @@ main {
   -webkit-background-clip: text;
   color: transparent;
   white-space: nowrap;
-  font-size: clamp(35px, 22vw, 480px);
+  font-size: clamp(40px, 17vw, 460px);
   width: max-content;
   position: relative;
-  left: 20%;
-  transform: translateX(-23%);
+  left: 10%;
+  transform: translateX(-9%);
 }
 
 .divider-div {
@@ -43,17 +43,28 @@ main {
   justify-content: center;
 }
 
-.about-divider {
+.policy-divider {
   width: 70%;
   margin-block: 25px;
   margin-bottom: 40px;
 }
 
-.vision p {
+.policy p {
   color: white;
   font-family: Elms Sans;
+  line-height: 30px;
   font-size: clamp(12px, 4vw, 18px);
   padding-inline: 20px;
+}
+
+.policy p b {
+  color: rgb(196, 241, 32);
+  font-size: 20px;
+}
+
+.policy p strong {
+  color: rgb(196, 241, 32);
+  font-family: Elms Sans;
 }
 
 @keyframes limeShift {

@@ -6,7 +6,7 @@ main {
   gap: 4rem;
 }
 
-.vision .label {
+.terms .label {
   font-family: Syne;
   font-weight: 800;
   margin: 0;
@@ -14,13 +14,18 @@ main {
   text-align: center;
 }
 
-.vision {
+.terms {
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
 
-.vision .title {
+.terms p b {
+  color: rgb(196, 241, 32);
+  font-size: 20px;
+}
+
+.terms .title {
   font-family: Syne;
   text-transform: uppercase;
   background: linear-gradient(to right, white, rgb(196, 241, 32), white);
@@ -31,11 +36,11 @@ main {
   -webkit-background-clip: text;
   color: transparent;
   white-space: nowrap;
-  font-size: clamp(35px, 22vw, 480px);
+  font-size: clamp(20px, 7vw, 430px);
   width: max-content;
   position: relative;
   left: 20%;
-  transform: translateX(-23%);
+  transform: translateX(-21%);
 }
 
 .divider-div {
@@ -43,14 +48,15 @@ main {
   justify-content: center;
 }
 
-.about-divider {
+.terms-divider {
   width: 70%;
   margin-block: 25px;
   margin-bottom: 40px;
 }
 
-.vision p {
+.terms p {
   color: white;
+  line-height: 30px;
   font-family: Elms Sans;
   font-size: clamp(12px, 4vw, 18px);
   padding-inline: 20px;

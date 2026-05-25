@@ -118,7 +118,7 @@ header .hamburger:hover {
   right: 0;
   bottom: 0;
   width: 300px;
-  background: rgb(15, 13, 40);
+  background: rgb(25, 22, 62);
   backdrop-filter: blur(16px);
   flex-direction: column;
   gap: 2rem;
