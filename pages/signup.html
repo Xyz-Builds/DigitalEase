@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/pages/signup.css" />
+    <link rel="stylesheet" href="../styles/general.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="icon" type="image/png" href="../favicon-16x16.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Geist:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <title>Sign Up - DigitalEase</title>
+  </head>
+  <body>
+    <header id="header"></header>
+
+    <main>
+      <div class="split-layout">
+        <div class="hero-panel">
+          <div class="hero-content">
+            <p class="hero-eyebrow">DigitalEase</p>
+            <h1 id="word2"></h1>
+            <p class="hero-sub">
+              Join thousands staying safe online.<br />It only takes a minute.
+            </p>
+          </div>
+          <div class="hero-orb"></div>
+          <div class="hero-orb hero-orb--2"></div>
+        </div>
+
+        <section class="sign-up">
+          <div class="form-header">
+            <h2>Create account</h2>
+            <p>Already have one? <a href="signin.html">Sign in</a></p>
+          </div>
+
+          <div class="input-row">
+            <div class="input-wrap">
+              <label>First Name</label>
+              <input id="first-name" type="text" placeholder="John" />
+            </div>
+            <div class="input-wrap">
+              <label>Last Name</label>
+              <input id="last-name" type="text" placeholder="Doe" />
+            </div>
+          </div>
+
+          <div class="input-wrap">
+            <label>Email</label>
+            <input id="email" type="email" placeholder="you@example.com" />
+          </div>
+
+          <div class="input-wrap">
+            <label>Password</label>
+            <input id="password" type="password" placeholder="········" />
+          </div>
+
+          <p id="error-msg"></p>
+
+          <button class="create-btn" onclick="signUpWithEmail()">
+            Create Account <span class="ms">arrow_outward</span>
+          </button>
+
+          <div class="method-div">
+            <div class="divider-row">
+              <hr />
+              <span>or continue with</span>
+              <hr />
+            </div>
+            <button class="google-btn" onclick="signUpWithGoogle()">
+              <img src="../images/google-icon.png" />
+              <span>Google</span>
+            </button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="../components/header.js"></script>
+    <script src="../components/footer.js"></script>
+    <script src="../scripts/typescript.js"></script>
+    <script type="module">
+      import { signUpWithEmail, signUpWithGoogle } from "../scripts/signup.js";
+      window.signUpWithEmail = signUpWithEmail;
+      window.signUpWithGoogle = signUpWithGoogle;
+    </script>
+  </body>
+</html>
