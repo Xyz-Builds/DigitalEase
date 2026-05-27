@@ -109,17 +109,18 @@ header .hamburger:hover {
   display: flex;
   position: fixed;
   overflow: hidden;
-  height: fit-content;
+  height: 100vh;
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
   border-top-left-radius: 0 !important;
   padding-bottom: 20px;
   border-radius: 25px;
+  box-shadow: 0 0 70px rgb(14, 6, 106);
   top: 0;
   right: 0;
   bottom: 0;
   width: 300px;
-  background: rgb(25, 22, 62);
+  background: rgb(255, 255, 255);
   backdrop-filter: blur(16px);
   flex-direction: column;
   gap: 2rem;
@@ -138,18 +139,19 @@ header .hamburger:hover {
 
 .mobile-menu .sign-up-a .btn {
   display: flex;
+  justify-content: center;
   align-items: center;
-  width: fit-content !important;
-  gap: 6px;
   padding: 8px 20px !important;
-  gap: 0.7rem !important;
+  gap: 0.8rem !important;
   justify-self: center;
   white-space: nowrap;
-  border-radius: 999em;
+  width: 90% !important;
+  padding-inline: 20px;
+  border-radius: 5px;
   background-color: hsl(104, 100%, 71%) !important;
   color: #111 !important;
   font-family: Syne, sans-serif;
-  font-size: 15px !important;
+  font-size: 13px !important;
   font-weight: 600;
   text-decoration: none;
   position: relative;
@@ -157,24 +159,31 @@ header .hamburger:hover {
   transition: transform 0.2s ease-in-out !important;
 }
 
+.mobile-menu .sign-up-a .btn .ms {
+  font-size: 20px !important;
+  color: black;
+}
+
 .mobile-menu .sign-up-a .btn:hover {
   transform: translateY(-5px);
 }
 
 .mobile-menu .menu-a .btn {
-  background-color: rgb(52, 52, 88);
+  background-color: rgb(11, 21, 39);
   display: flex;
-  gap: 5%;
+  gap: 10%;
   align-items: center;
   color: white;
   border: none;
   padding-inline: 15px;
   padding-block: 10px;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 12px;
   text-align: left;
   width: 100%;
-  font-family: Syne;
+  font-family: Geist;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
   font-weight: 700;
   transition: filter 0.2s ease-in-out;
 }
@@ -187,14 +196,16 @@ header .hamburger:hover {
   transform: translateX(0);
 }
 
-.mobile-menu.open body {
-  filter: brightness(0.5);
+main.open {
+  filter: brightness(0.5) !important;
 }
 
 .account-divider {
   width: 70%;
   position: relative;
   transform: translateX(-50%);
+  border: 0.1pt black solid;
+  opacity: 0.2;
   left: 50%;
 }
 
@@ -202,34 +213,43 @@ header .hamburger:hover {
   opacity: 1;
 }
 
-.mobile-menu .close-menu {
+.mobile-menu .account-wrap {
+  display: flex;
   position: absolute;
-  top: 20px;
-  right: 28px;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 32px;
-  cursor: pointer;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+  flex-direction: row;
 }
 
 .mobile-menu .account-info {
   padding-inline: 20px;
   padding-block: 10px;
   padding-bottom: 0;
-  font-size: 18px;
+  font-size: 13px;
+  letter-spacing: 0.15em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-self: center;
   gap: 1rem;
-  font-family: Syne;
+  font-family: Geist;
+  text-transform: uppercase;
   font-weight: 800;
-  color: white;
 }
 
-.mobile-menu .account-info .ms {
-  font-size: 45px;
+.mobile-menu .account {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  bottom: 100px;
+}
+
+.mobile-menu .account-wrap .ms {
+  font-size: 60px;
 }
 
 @media (max-width: 700px) {

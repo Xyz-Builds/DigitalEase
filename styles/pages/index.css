@@ -6,6 +6,10 @@ main {
   gap: 4rem;
 }
 
+a {
+  text-decoration: none;
+}
+
 .brief-intro {
   position: relative;
   padding-inline: 30px;
@@ -250,6 +254,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
   align-items: center;
   gap: 1.5rem;
 }
