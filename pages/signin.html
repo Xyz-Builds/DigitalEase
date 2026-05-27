@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/pages/signin.css" />
+    <link rel="stylesheet" href="../styles/general.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="icon" type="image/png" href="../favicon-16x16.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Geist:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <title>Sign In - DigitalEase</title>
+  </head>
+  <body>
+    <header id="header"></header>
+
+    <main>
+      <div class="split-layout">
+        <section class="sign-in">
+          <div class="form-header">
+            <h2>Welcome back</h2>
+            <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+          </div>
+
+          <div class="input-wrap">
+            <label>Email</label>
+            <input id="email" type="email" placeholder="you@example.com" />
+          </div>
+
+          <div class="input-wrap">
+            <label>Password</label>
+            <input id="password" type="password" placeholder="········" />
+          </div>
+
+          <p id="error-msg"></p>
+
+          <button class="signin-btn" onclick="signInWithEmail()">
+            Sign In <span class="ms">arrow_outward</span>
+          </button>
+
+          <div class="method-div">
+            <div class="divider-row">
+              <hr />
+              <span>or continue with</span>
+              <hr />
+            </div>
+
+            <button class="google-btn" onclick="signInWithGoogle()">
+              <img src="../images/google-icon.png" />
+              <span>Google</span>
+            </button>
+
+            <button class="magic-btn" onclick="sendMagicLink()">
+              <span class="ms">magic_button</span>
+              <span>Send Magic Link</span>
+            </button>
+          </div>
+        </section>
+
+        <div class="hero-panel">
+          <div class="hero-content">
+            <p class="hero-eyebrow">DigitalEase</p>
+            <h1 id="word3"></h1>
+            <p class="hero-sub">
+              Your digital safety hub<br />is waiting for you.
+            </p>
+          </div>
+          <div class="hero-orb"></div>
+          <div class="hero-orb hero-orb--2"></div>
+        </div>
+      </div>
+    </main>
+
+    <script src="../components/header.js"></script>
+    <script src="../components/footer.js"></script>
+    <script src="../scripts/typescript.js"></script>
+    <script type="module">
+      import {
+        signInWithEmail,
+        signInWithGoogle,
+        sendMagicLink,
+      } from "../scripts/signin.js";
+      window.signInWithEmail = signInWithEmail;
+      window.signInWithGoogle = signInWithGoogle;
+      window.sendMagicLink = sendMagicLink;
+    </script>
+  </body>
+</html>

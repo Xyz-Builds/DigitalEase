@@ -3,7 +3,10 @@ import { supabase } from "./supabase.js";
 export async function signInWithGoogle() {
   await supabase.auth.signInWithOAuth({
     provider: "google",
-    options: { redirectTo: "http://localhost:5501/dashboard.html" },
+    options: {
+      redirectTo:
+        "https://xyz-builds.github.io/DigitalEase/pages/dashboard/dashboard.html",
+    },
   });
 }
 
@@ -26,7 +29,10 @@ export async function sendMagicLink() {
 
   const { error } = await supabase.auth.signInWithOtp({
     email,
-    options: { emailRedirectTo: "http://localhost:5501/dashboard.html" },
+    options: {
+      emailRedirectTo:
+        "https://xyz-builds.github.io/DigitalEase/pages/dashboard/dashboard.html",
+    },
   });
 
   if (error) {
@@ -34,6 +40,6 @@ export async function sendMagicLink() {
     return;
   }
 
-  document.getElementById("error-msg").textContent =
+  document.getElementById("error-msg").innerHTML =
     '<span class="ms">check_circle</span> Check your email for the magic link!';
 }

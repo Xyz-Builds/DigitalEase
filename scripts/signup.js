@@ -3,7 +3,10 @@ import { supabase } from "./supabase.js";
 export async function signUpWithGoogle() {
   await supabase.auth.signInWithOAuth({
     provider: "google",
-    options: { redirectTo: "http://localhost:5501/dashboard.html" },
+    options: {
+      redirectTo:
+        "https://xyz-builds.github.io/DigitalEase/pages/dashboard/dashboard.html",
+    },
   });
 }
 

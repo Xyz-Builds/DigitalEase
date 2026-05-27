@@ -14,8 +14,17 @@ const words2 = [
   "Your digital ease awaits.",
 ];
 
+const words3 = [
+  "Good to see you again.",
+  "We kept your spot.",
+  "Your space awaits you.",
+  "Glad your here again.",
+  "Ready when you are.",
+];
+
 const el = document.getElementById("word");
 const el2 = document.getElementById("word2");
+const el3 = document.getElementById("word3");
 
 function cycleWords(words, el) {
   if (!el) return;
@@ -36,3 +45,4 @@ function cycleWords(words, el) {
 
 cycleWords(words, el);
 cycleWords(words2, el2);
+cycleWords(words3, el3);
