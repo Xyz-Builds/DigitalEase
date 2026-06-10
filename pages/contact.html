@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/pages/contact.css" />
+    <link rel="stylesheet" href="../styles/general.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="icon" type="image/png" href="../favicon-16x16.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Geist:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <title>Get In Touch - DigitalEase</title>
+  </head>
+  <body>
+    <header id="header"></header>
+
+    <main>
+      <div class="split-layout">
+        <div class="hero-panel">
+          <div class="hero-content">
+            <p class="hero-eyebrow">DigitalEase</p>
+            <h1 id="word4"></h1>
+            <p class="hero-sub">
+              Got an idea, question, or suggestion? Drop it here.
+            </p>
+          </div>
+          <div class="hero-orb"></div>
+          <div class="hero-orb hero-orb--2"></div>
+        </div>
+
+        <section class="contact">
+          <div class="labels">
+            <h1 class="label">Get In Touch</h1>
+            <h2 class="sub-label">
+              Have something to share? We'd love to hear it.
+            </h2>
+          </div>
+
+          <form
+            class="input-wrap"
+            action="https://api.web3forms.com/submit"
+            method="POST"
+          >
+            <input
+              type="hidden"
+              name="access_key"
+              class="input-row"
+              value="0ebe7293-be31-43b5-b55c-aa9cc66b298e"
+            />
+            <label>Name</label>
+            <input
+              type="text"
+              name="name"
+              required
+              placeholder="Please input your name"
+            />
+            <label>Email</label>
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="Please input your email"
+            />
+            <label>Message</label>
+            <textarea
+              name="message"
+              required
+              placeholder="What's on your mind?"
+            ></textarea>
+            <button type="submit" class="send-btn">
+              Submit Form <span class="ms">send</span>
+            </button>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <script src="../components/header.js"></script>
+    <script src="../components/footer.js"></script>
+    <script src="../scripts/typescript.js"></script>
+    <script type="module">
+      import { signUpWithEmail, signUpWithGoogle } from "../scripts/signup.js";
+      window.signUpWithEmail = signUpWithEmail;
+      window.signUpWithGoogle = signUpWithGoogle;
+    </script>
+  </body>
+</html>

@@ -11,6 +11,7 @@ document.getElementById("header").innerHTML = `
 
     <div class="buttons">
       <a href="${base}pages/about.html">About us</a>
+      <a href="${base}pages/features.html">Features</a>
       <a href="${base}pages/contact.html">Contact us</a>
     </div>
 
@@ -24,6 +25,7 @@ document.getElementById("header").innerHTML = `
       <div class="sec-btns">
         <a class="about-a menu-a" href="${base}pages/about.html"><button class="btn"><span class="ms">article_person</span>About us</button></a>
         <a class="contact-a menu-a" href="${base}pages/contact.html"><button class="btn"><span class="ms">chat</span>Contact us</button></a>
+        <a class="features-a menu-a" href="${base}pages/features.html"><button class="btn"><span class="ms">apps</span>Features</button></a>
       </div>
 
       <hr class="account-divider">

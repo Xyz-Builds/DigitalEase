@@ -1,0 +1,100 @@
+body {
+  background: #0d1117;
+  color: white;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+main {
+  padding: 120px 24px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.features {
+  display: flex;
+  gap: 5rem;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.subtitle {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: Geist;
+  letter-spacing: 0.15em;
+  color: rgb(157, 255, 142);
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+.title {
+  text-align: center;
+  font-family: Syne;
+  font-weight: 800;
+  font-size: clamp(1rem, 5vw + 1rem, 6rem);
+  justify-content: center;
+  justify-self: center;
+  display: flex;
+  gap: 2rem;
+}
+
+.title .ms {
+  transform: translateY(5px);
+}
+
+.desc {
+  font-family: Elms Sans;
+  letter-spacing: 0.15em;
+  font-size: 12px;
+  text-align: center;
+  color: rgb(157, 255, 142);
+  text-transform: uppercase;
+}
+
+.subtitle,
+.title,
+.desc {
+  text-shadow: 0 0 40px rgb(157, 255, 142, 0.5);
+}
+
+.main-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.features-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 400px));
+  justify-content: center;
+  gap: 1rem;
+}
+
+.features-cards .card {
+  background-color: #080f24;
+  border: 3px solid rgba(255, 255, 255, 0.126);
+  padding-inline: 30px;
+  padding-block: 30px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 60px rgb(157, 255, 142, 0.1);
+  gap: 1rem;
+  border-radius: 10px;
+}
+
+.features-cards .card-divider {
+  width: 70%;
+  margin-block: 5px;
+}
+
+.features-cards .card h1 {
+  font-family: Syne;
+}
+
+.features-cards .card p {
+  font-family: Elms Sans;
+}

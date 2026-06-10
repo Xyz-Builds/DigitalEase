@@ -36,5 +36,5 @@ export async function signUpWithEmail() {
     email: email,
   });
 
-  window.location.href = "dashboard.html";
+  window.location.href = "dashboard/dashboard.html";
 }

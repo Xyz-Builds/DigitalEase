@@ -22,9 +22,19 @@ const words3 = [
   "Ready when you are.",
 ];
 
+const words4 = [
+  "What's on your mind?",
+  "Got something to share?",
+  "Spill the beans!",
+  "We're listening...",
+  "Got something to say?",
+  "We're all ears.",
+];
+
 const el = document.getElementById("word");
 const el2 = document.getElementById("word2");
 const el3 = document.getElementById("word3");
+const el4 = document.getElementById("word4");
 
 function cycleWords(words, el) {
   if (!el) return;
@@ -46,3 +56,4 @@ function cycleWords(words, el) {
 cycleWords(words, el);
 cycleWords(words2, el2);
 cycleWords(words3, el3);
+cycleWords(words4, el4);
