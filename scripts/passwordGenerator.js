@@ -1,3 +1,5 @@
+import { supabase } from "../../scripts/supabase.js";
+
 const generatedPass = document.getElementById("generatedPass");
 const saveVault = document.getElementById("savePass");
 const lengthInput = document.getElementById("length");
