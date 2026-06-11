@@ -22,6 +22,7 @@ main {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 18px;
+  box-shadow: 0 0 60px rgb(157, 255, 142, 0.1);
   padding: 36px;
   backdrop-filter: blur(12px);
 }
