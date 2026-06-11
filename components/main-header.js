@@ -29,10 +29,11 @@ document.getElementById("main-header").innerHTML = `
       <span class="ms">account_circle</span>
 
       <div class="account-info" id="account-info">
-        Guest User
+        ${meta.first_name + " " + meta.last_name}
       </div>
     </div>
   </div>
+
 </header>
 `;
 
