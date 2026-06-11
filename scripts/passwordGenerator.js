@@ -31,6 +31,10 @@ updatePassword();
 
 generateBtn.addEventListener("click", updatePassword);
 
+document.getElementById("generatedPass").textContent = generatePassword(
+  Number(length.valueOf),
+);
+
 copyBtn.addEventListener("click", async () => {
   await navigator.clipboard.writeText(generatedPass.textContent);
 
