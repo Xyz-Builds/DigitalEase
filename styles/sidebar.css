@@ -27,7 +27,7 @@ nav::before {
   flex-shrink: 0;
 }
 
-.buttons {
+.side-buttons {
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -118,7 +118,6 @@ nav:hover .section-title {
   gap: 16px;
 
   margin: 10px;
-  margin-right: 0;
   padding: 12px;
 
   border-radius: 14px;
