@@ -7,9 +7,6 @@ const {
   error,
 } = await supabase.auth.getUser();
 
-console.log("USER:", user);
-console.log("ERROR:", error);
-
 if (!user) {
   window.location.href = `${base}pages/signin.html`;
   throw new Error("User not authenticated");
@@ -31,8 +28,6 @@ window.signOut = async () => {
 document
   .getElementById("sign-out-btn")
   ?.addEventListener("click", window.signOut);
-
-console.log(user.user_metadata);
 
 document.getElementById("main-header").innerHTML = `
 <header>
