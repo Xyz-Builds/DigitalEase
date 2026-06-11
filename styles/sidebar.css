@@ -76,6 +76,7 @@ nav::before {
 
 .side-btn .ms {
   flex-shrink: 0;
+  opacity: 1 !important;
   font-size: 22px;
 }
 
