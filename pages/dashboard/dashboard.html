@@ -4,11 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../styles/pages/dashboard.css" />
+    <link rel="stylesheet" href="../../styles/main-header.css" />
     <link rel="stylesheet" href="../../styles/general.css" />
     <link rel="stylesheet" href="../../styles/footer.css" />
     <title>Dashboard - DigitalEase</title>
   </head>
   <body>
+    <div id="main-header"></div>
+
     <main>
       <img id="avatar" src="" width="60" style="border-radius: 50%" />
       <p id="welcome-msg"></p>
@@ -16,26 +19,6 @@
       <button onclick="signOut()">Sign Out</button>
     </main>
 
-    <script type="module">
-      import { supabase } from "../../scripts/supabase.js";
-
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-
-      if (!user) {
-        window.location.href = "../signin.html";
-      } else {
-        const meta = user.user_metadata;
-        document.getElementById("welcome-msg").textContent =
-          `Welcome, ${meta.first_name}!`;
-        document.getElementById("avatar").src = meta.avatar_url || "";
-      }
-
-      window.signOut = async () => {
-        await supabase.auth.signOut();
-        window.location.href = "../signin.html";
-      };
-    </script>
+    <script type="module" src="../../components/main-header.js"></script>
   </body>
 </html>

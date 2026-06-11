@@ -1,0 +1,293 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 36px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(10, 14, 23, 0.72);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background 0.3s ease;
+}
+
+header .icon {
+  height: 24px;
+  width: auto;
+}
+
+header .logo-link {
+  display: flex;
+  align-items: center;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+header .logo-link:hover {
+  opacity: 1;
+}
+
+header .buttons {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+header .buttons a {
+  color: rgba(255, 255, 255, 0.55);
+  font-family: "Geist", sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s;
+}
+
+header .buttons a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #4a90d9;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+header .buttons a:hover {
+  color: #ffffff;
+}
+header .buttons a:hover::after {
+  transform: scaleX(1);
+}
+
+header .sign-out-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 20px;
+  border-radius: 8px;
+  background: rgb(196, 241, 32);
+  color: black;
+  font-family: "Geist", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition:
+    background 0.2s,
+    transform 0.15s,
+    box-shadow 0.2s;
+}
+
+header .sign-out-btn:hover {
+  background: rgb(160, 195, 31);
+  box-shadow: 0 0 18px rgba(51, 223, 46, 0.4);
+  transform: translateY(-1px);
+}
+
+.sign-out-btn span {
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.sign-out-btn .ms {
+  font-size: 15px;
+  font-variation-settings: "wght" 300;
+}
+
+header .hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 26px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  transition:
+    color 0.2s,
+    background 0.2s;
+}
+
+header .hamburger:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.side-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: fit-content;
+  width: 280px;
+  border: 3px solid rgba(255, 255, 255, 0.126);
+  border-top: 0;
+  display: flex;
+  flex-direction: column;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  z-index: 9999;
+  transform: translateX(100%);
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: -20px 0 60px rgba(0, 0, 0, 0.5);
+  background-color: #0d1117;
+  opacity: 0.9;
+}
+
+.side-bar.open {
+  transform: translateX(0);
+}
+
+.side-bar::before {
+  content: "";
+  display: block;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.side-bar .menu-a {
+  text-decoration: none;
+}
+
+.side-bar .menu-a .btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "Geist", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background 0.18s,
+    color 0.18s;
+  text-align: left;
+}
+
+.side-bar .menu-a .btn .ms {
+  font-size: 18px;
+  color: #4a90d9;
+}
+
+.side-bar .menu-a .btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+}
+
+.account-divider {
+  margin: 16px 20px;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.side-bar .account {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-bar .account-wrap {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 20px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.side-bar .account-wrap .ms {
+  font-size: 36px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.side-bar .account-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: "Geist", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.side-bar .sign-up-a {
+  text-decoration: none;
+}
+
+.side-bar .sign-up-a .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: 8px;
+  background: #2563eb;
+  border: none;
+  color: #ffffff;
+  font-family: "Geist", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%;
+  transition:
+    background 0.2s,
+    transform 0.15s;
+}
+
+.side-bar .sign-up-a .btn .ms {
+  font-size: 16px;
+  color: white;
+}
+
+.side-bar .sign-up-a .btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+main.open {
+  filter: brightness(0.4);
+  pointer-events: none;
+  transition: filter 0.32s ease;
+}
+
+@media (max-width: 700px) {
+  header .buttons,
+  header .sign-out-btn {
+    display: none;
+  }
+
+  header .hamburger {
+    display: block;
+  }
+}
