@@ -1,6 +1,6 @@
 const base = new URL("../", import.meta.url).href;
 
-import { supabase } from `${base}scripts/supabase.js`;
+const { supabase } = await import(`${base}scripts/supabase.js`);
 
 document.getElementById("main-header").innerHTML = `
 <header>
