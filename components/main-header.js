@@ -58,7 +58,7 @@ document.getElementById("main-header").innerHTML = `
     <hr class="account-divider">
 
     <div class="account-wrap">
-      <img class="pfp" src="${avatar_url}">
+      <img class="pfp" src="${meta.avatar_url}">
 
       <div class="account-info" id="account-info">
         ${meta.full_name}
