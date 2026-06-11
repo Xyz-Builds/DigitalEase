@@ -31,6 +31,9 @@ document
 
 document.getElementById("sidebar").innerHTML = `
 <nav>
+  <h2 class="section-title">Dashboard</h2>
+
+  <a class="side-a" href="${base}pages/dashboard/dashboard.html"><button class="side-btn"><span class="ms">dashboard</span>Dashboard</button></a>
 
   <h2 class="section-title">Features</h2>
   <div class="side-buttons">
