@@ -117,6 +117,7 @@ nav:hover .section-title {
   gap: 16px;
 
   margin: 10px;
+  margin-right: 0;
   padding: 12px;
 
   border-radius: 14px;
@@ -129,6 +130,7 @@ nav:hover .section-title {
 .pfp {
   width: 42px;
   height: 42px;
+  transform: translateX(-10px);
   border-radius: 999px;
   margin-left: 0;
   flex-shrink: 0;
@@ -162,6 +164,7 @@ nav .sign-out-btn {
   gap: 6px;
   padding: 8px 20px;
   border-radius: 8px;
+  cursor: pointer;
   background: rgb(196, 241, 32);
   color: black;
   font-family: "Geist", sans-serif;
