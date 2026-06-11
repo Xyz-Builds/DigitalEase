@@ -16,14 +16,23 @@ main {
   text-align: center;
   padding-inline: 30px;
   padding-block: 20px;
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-weight: 700;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.06);
   color: white;
 }
 
 .intro-card {
   font-family: Syne;
-  font-size: 33px;
+  font-size: 25px;
+  background-color: rgba(121, 153, 234, 0.72);
+  text-align: center;
+  padding-inline: 30px;
+  padding-block: 40px;
+  font-weight: 700;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: white;
 }
 
 .intro-card span {
@@ -31,5 +40,38 @@ main {
   background: linear-gradient(to right, rgba(156, 229, 130, 0.72), white);
   background-clip: text;
   -webkit-background-clip: text;
+  font-weight: auto;
+  font-family: Elms Sans;
+}
+
+.card-divider {
+  justify-self: center;
+  width: 70%;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.status {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.status h1 {
+  font-family: Syne;
+  font-size: 25px;
+  padding-block: 15px;
+}
+
+.status .card {
+  display: flex;
+  flex-direction: column;
+}
+
+.status h2 {
+  font-family: Syne;
+  font-size: 20px;
+}
+
+.status p {
   font-family: Geist;
 }
