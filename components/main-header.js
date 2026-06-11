@@ -23,11 +23,6 @@ if (accountInfo) {
     `${meta.first_name || ""} ${meta.last_name || ""}`.trim();
 }
 
-const avatar = document.getElementById("avatar");
-if (avatar) {
-  avatar.src = meta.avatar_url || "";
-}
-
 window.signOut = async () => {
   await supabase.auth.signOut();
   window.location.href = `${base}pages/signup.html`;
