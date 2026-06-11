@@ -104,5 +104,15 @@
 
     <script type="module" src="../../components/main-header.js"></script>
     <script type="module" src="../../components/sidebar.js"></script>
+
+    <script>
+      const [firstName, lastName] = meta.full_name.split(" ");
+
+      const welcomeMsg = document.getElementById("welcome-msg");
+
+      if (welcomeMsg) {
+        welcomeMsg.innerHTML = `Welcome <span>${firstName}</span>`;
+      }
+    </script>
   </body>
 </html>
