@@ -1,4 +1,4 @@
-import { supabase } from "././scripts/supabase.js";
+import { supabase } from "../scripts/supabase.js";
 
 const {
   data: { user },
