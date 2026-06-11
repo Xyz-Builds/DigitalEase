@@ -1,39 +1,40 @@
 import { supabase } from "././scripts/supabase.js";
 
-const {
-  data: { user },
-} = await supabase.auth.getUser();
+async function loadVault() {
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
 
-if (!user) {
-  window.location.href = "../signin.html";
-}
+  if (!user) return;
 
-const { data, error } = await supabase
-  .from("vault")
-  .select("*")
-  .eq("user_id", user.id)
-  .order("created_at", { ascending: false });
+  const { data, error } = await supabase
+    .from("vault")
+    .select("*")
+    .eq("user_id", user.id)
+    .order("created_at", { ascending: false });
 
-if (error) {
-  console.error(error);
-  return;
-}
+  if (error) {
+    console.error(error);
+    return;
+  }
 
-const vaultContainer = document.getElementById("vaultContainer");
+  const vaultContainer = document.getElementById("vaultContainer");
 
-if (!vaultContainer) {
-  console.error("Vault container not found");
-  return;
-}
+  if (!vaultContainer) {
+    console.error("Vault container not found");
+    return;
+  }
 
-if (data.length === 0) {
-  vaultContainer.innerHTML = `
-    <div class="empty-state">
-      <h2>Your vault is empty</h2>
-      <p>Generate and save a password to see it here.</p>
-    </div>
-  `;
-} else {
+  if (data.length === 0) {
+    vaultContainer.innerHTML = `
+      <div class="empty-state">
+        <h2>Your vault is empty</h2>
+        <p>Generate and save a password to see it here.</p>
+      </div>
+    `;
+    return;
+  }
+
   data.forEach((entry) => {
     vaultContainer.innerHTML += `
       <div class="vault-card">
@@ -45,3 +46,5 @@ if (data.length === 0) {
     `;
   });
 }
+
+loadVault();
