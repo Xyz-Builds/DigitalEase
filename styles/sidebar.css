@@ -24,6 +24,31 @@ nav::before {
   flex-shrink: 0;
 }
 
+.buttons {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.side-btn {
+  display: flex;
+  font-family: Geist;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding-inline: 5px;
+  gap: 1rem;
+  width: 100%;
+  background-color: rgba(8, 11, 17, 0.72);
+}
+
+.section-title {
+  margin-block: 10px;
+  font-family: Syne;
+  color: white;
+  font-size: 25px;
+}
+
 .account-divider {
   margin: 16px 20px;
   border: none;
@@ -42,6 +67,7 @@ nav::before {
   width: 42px;
   height: 42px;
   border-radius: 999px;
+  margin-left: 0;
   flex-shrink: 0;
 }
 

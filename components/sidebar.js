@@ -37,6 +37,16 @@ console.log(user.user_metadata);
 document.getElementById("sidebar").innerHTML = `
 <nav>
 
+  <h2 class="section-title">Features</h2>
+  <div class="buttons">
+    <a class="side-a"><button class="side-btn"><span class="ms">password</span>Password Generator</button></a>
+    <a class="side-a"><button class="side-btn"><span class="ms">book_ribbon</span>Lessons</button></a>
+    <a class="side-a"><button class="side-btn"><span class="ms">gpp_maybe</span>Phishing Simulator</button></a>
+  </div>
+
+  <hr class="account-divider">
+
+  <h2 class="section-title">Account</h2>
   <div class="account-wrap">
     <img class="pfp" src="${meta.avatar_url}">
 
