@@ -6,6 +6,9 @@ nav {
   width: 70px;
   overflow: hidden;
   border-right: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 20px 60px rgba(0, 0, 0, 0.35);
   background: rgba(10, 14, 23, 0.72);
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
@@ -14,7 +17,7 @@ nav {
 }
 
 nav:hover {
-  width: 300px;
+  width: 280px;
 }
 
 nav::before {
@@ -27,26 +30,79 @@ nav::before {
 .buttons {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  gap: 4px;
+  margin-top: 8px;
 }
 
 .side-btn {
   display: flex;
+  align-items: center;
+  gap: 18px;
+
+  width: calc(100% - 12px);
+  margin: 3px 6px;
+  padding: 14px 18px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: transparent;
+
+  color: rgba(255, 255, 255, 0.75);
   font-family: Geist;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+  overflow: hidden;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.side-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
   color: white;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  padding-inline: 5px;
-  gap: 1rem;
-  width: 100%;
-  background-color: rgba(8, 11, 17, 0.72);
+}
+
+.side-btn:active {
+  transform: scale(0.98);
+}
+
+.side-btn .ms {
+  flex-shrink: 0;
+  font-size: 22px;
+}
+
+.side-btn span:last-child {
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+nav:hover .side-btn span:last-child {
+  opacity: 1;
 }
 
 .section-title {
-  margin-block: 10px;
+  opacity: 0;
+  white-space: nowrap;
+  margin: 20px 20px 10px;
   font-family: Syne;
-  color: white;
-  font-size: 25px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+}
+
+nav:hover .section-title {
+  opacity: 1;
 }
 
 .account-divider {
@@ -59,7 +115,14 @@ nav::before {
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 20px;
+
+  margin: 10px;
+  padding: 12px;
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.04);
+
   white-space: nowrap;
 }
 
@@ -73,11 +136,20 @@ nav::before {
 
 .account-info {
   opacity: 0;
-  font-family: Geist;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  overflow: hidden;
+  white-space: nowrap;
+
   color: white;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  transition: opacity 0.15s ease;
+  font-family: Geist;
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: opacity 0.2s ease;
 }
 
 nav:hover .account-info {
