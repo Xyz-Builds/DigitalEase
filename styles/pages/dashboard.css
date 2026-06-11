@@ -12,7 +12,8 @@ main {
 }
 
 .card {
-  background-color: rgba(67, 89, 144, 0.72);
+  background-color: rgba(121, 153, 234, 0.72);
+  text-align: center;
   padding-inline: 30px;
   padding-block: 20px;
   border-radius: 15px;
@@ -22,7 +23,7 @@ main {
 
 .intro-card {
   font-family: Syne;
-  font-size: 50px;
+  font-size: 33px;
 }
 
 .intro-card span {
@@ -30,5 +31,5 @@ main {
   background: linear-gradient(to right, rgba(156, 229, 130, 0.72), white);
   background-clip: text;
   -webkit-background-clip: text;
-  font-family: Elms Sans;
+  font-family: Geist;
 }
