@@ -25,37 +25,81 @@
     />
     <title>Dashboard - DigitalEase</title>
   </head>
+
   <body>
     <div id="main-header"></div>
     <div id="sidebar"></div>
 
     <main>
-      <div class="card-grid">
-        <article class="card intro-card">
-          <h1 id="welcome-msg"></h1>
-        </article>
+      <section class="hero-card">
+        <h1 id="welcome-msg">Welcome Back 👋</h1>
+        <p>
+          Continue strengthening your cybersecurity knowledge and explore the
+          tools available to help you stay safe online.
+        </p>
+      </section>
 
-        <hr class="card-divider" />
+      <section class="dashboard-section">
+        <h2>Your Journey</h2>
 
-        <section class="status">
-          <h1>Progress</h1>
-
-          <article class="card lessons">
-            <h2>Lessons</h2>
-            <p>0/6</p>
+        <div class="stats-grid">
+          <article class="stat-card">
+            <span class="stat-value">0 / 6</span>
+            <span class="stat-label">Lessons Completed</span>
           </article>
 
-          <article class="card streak">
-            <h2>Streak</h2>
-            <p>1 day</p>
+          <article class="stat-card">
+            <span class="stat-value">1</span>
+            <span class="stat-label">Day Streak</span>
           </article>
 
-          <article class="card safety-score">
-            <h2>Safety Score</h2>
-            <p>0/100</p>
+          <article class="stat-card">
+            <span class="stat-value">0 / 100</span>
+            <span class="stat-label">Safety Score</span>
           </article>
-        </section>
-      </div>
+        </div>
+      </section>
+
+      <section class="dashboard-section">
+        <h2>Quick Actions</h2>
+
+        <div class="actions-grid">
+          <a href="#" class="action-card">
+            <h3>Password Generator</h3>
+            <p>Create secure passwords for your accounts.</p>
+          </a>
+
+          <a href="#" class="action-card">
+            <h3>Privacy Checkup</h3>
+            <p>Evaluate your online safety habits.</p>
+          </a>
+
+          <a href="#" class="action-card">
+            <h3>Phishing Simulator</h3>
+            <p>Practice spotting suspicious messages.</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="dashboard-section">
+        <h2>Continue Learning</h2>
+
+        <div class="learning-card">
+          <div class="learning-top">
+            <span>Cybersecurity Fundamentals</span>
+            <span>0%</span>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress-fill"></div>
+          </div>
+
+          <p>
+            Start your learning journey and unlock advanced cybersecurity
+            topics.
+          </p>
+        </div>
+      </section>
     </main>
 
     <script type="module" src="../../components/main-header.js"></script>
