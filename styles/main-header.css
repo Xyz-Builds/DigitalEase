@@ -222,9 +222,8 @@ header .hamburger:hover {
   background: rgba(255, 255, 255, 0.04);
 }
 
-.side-bar .account-wrap .ms {
-  font-size: 36px;
-  color: rgba(255, 255, 255, 0.3);
+.side-bar .account-wrap .pfp {
+  width: 36px;
 }
 
 .side-bar .account-info {

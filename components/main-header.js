@@ -63,10 +63,10 @@ document.getElementById("main-header").innerHTML = `
     <hr class="account-divider">
 
     <div class="account-wrap">
-      <span class="ms">account_circle</span>
+      <img class="pfp" src="avatar_url">
 
       <div class="account-info" id="account-info">
-        ${meta.first_name + " " + meta.last_name}
+        ${meta.full_name}
       </div>
     </div>
   </div>
