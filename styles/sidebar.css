@@ -34,6 +34,10 @@ nav::before {
   margin-top: 8px;
 }
 
+.side-a {
+  text-decoration: none;
+}
+
 .side-btn {
   display: flex;
   align-items: center;
