@@ -50,32 +50,22 @@ document.getElementById("main-header").innerHTML = `
     <span><span class="ms">logout</span> Sign Out</span>
   </button>
 
-  <button class="hamburger" aria-label="Open menu">
-    <span class="ms">menu</span>
-  </button>
-
-  <div id="sidebar"></div>
-
 </header>
 `;
 
 const hamburger = document.querySelector(".hamburger");
-const mobileMenu = document.querySelector(".side-bar");
+const sidebar = document.querySelector(".sidebar");
 const mainBody = document.querySelector("main");
 
-if (hamburger && mobileMenu && mainBody) {
+if (sidebar) {
   hamburger.addEventListener("mouseenter", (e) => {
     e.stopPropagation();
     mobileMenu.classList.add("open");
   });
 
   document.addEventListener("mouseleave", (e) => {
-    if (
-      mobileMenu.classList.contains("open") &&
-      !mobileMenu.contains(e.target) &&
-      !hamburger.contains(e.target)
-    ) {
-      mobileMenu.classList.remove("open");
+    if (sidebar.classList.contains("open") && !sidebar.contains(e.target)) {
+      sidebar.classList.remove("open");
     }
   });
 }
