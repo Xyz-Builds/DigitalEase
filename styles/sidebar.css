@@ -5,8 +5,10 @@ nav {
   height: calc(100vh - 60px);
   width: 70px;
   overflow: hidden;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
-  background: #0d1117;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(10, 14, 23, 0.72);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
   transition: width 0.3s ease;
   z-index: 500;
 }
@@ -37,14 +39,18 @@ nav::before {
 }
 
 .pfp {
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
   border-radius: 999px;
   flex-shrink: 0;
 }
 
 .account-info {
   opacity: 0;
+  font-family: Geist;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
   transition: opacity 0.15s ease;
 }
 
