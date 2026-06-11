@@ -29,6 +29,11 @@ document
   .getElementById("sign-out-btn")
   ?.addEventListener("click", window.signOut);
 
+const [firstName, lastName] = meta.full_name.split(" ");
+
+document.getElementById("welcome-msg").innerHTML =
+  `Welcome <span>${firstName}</span>`;
+
 document.getElementById("main-header").innerHTML = `
 <header>
   <a href="${base}index.html" class="logo-link">

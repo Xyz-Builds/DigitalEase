@@ -1,0 +1,34 @@
+main {
+  padding: 100px 40px 40px 110px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: rgba(67, 89, 144, 0.72);
+  padding-inline: 30px;
+  padding-block: 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: white;
+}
+
+.intro-card {
+  font-family: Syne;
+  font-size: 50px;
+}
+
+.intro-card span {
+  color: transparent;
+  background: linear-gradient(to right, rgba(156, 229, 130, 0.72), white);
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-family: Elms Sans;
+}
