@@ -37,6 +37,8 @@ document
   .getElementById("sign-out-btn")
   ?.addEventListener("click", window.signOut);
 
+console.log(user.user_metadata);
+
 document.getElementById("main-header").innerHTML = `
 <header>
   <a href="${base}index.html" class="logo-link">
