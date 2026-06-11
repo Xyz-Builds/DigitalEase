@@ -47,24 +47,14 @@ document.getElementById("main-header").innerHTML = `
   </div>
 
   <button class="sign-out-btn" id="sign-out-btn">
-    <span>Sign Out</span>
+    <span><span class="ms">logout</span> Sign Out</span>
   </button>
 
   <button class="hamburger" aria-label="Open menu">
     <span class="ms">menu</span>
   </button>
 
-  <div class="side-bar">
-    <hr class="account-divider">
-
-    <div class="account-wrap">
-      <img class="pfp" src="${meta.avatar_url}">
-
-      <div class="account-info" id="account-info">
-        ${meta.full_name}
-      </div>
-    </div>
-  </div>
+  <div id="sidebar"></div>
 
 </header>
 `;
@@ -74,20 +64,18 @@ const mobileMenu = document.querySelector(".side-bar");
 const mainBody = document.querySelector("main");
 
 if (hamburger && mobileMenu && mainBody) {
-  hamburger.addEventListener("click", (e) => {
+  hamburger.addEventListener("mouseenter", (e) => {
     e.stopPropagation();
     mobileMenu.classList.add("open");
-    mainBody.classList.add("open");
   });
 
-  document.addEventListener("click", (e) => {
+  document.addEventListener("mouseleave", (e) => {
     if (
       mobileMenu.classList.contains("open") &&
       !mobileMenu.contains(e.target) &&
       !hamburger.contains(e.target)
     ) {
       mobileMenu.classList.remove("open");
-      mainBody.classList.remove("open");
     }
   });
 }
