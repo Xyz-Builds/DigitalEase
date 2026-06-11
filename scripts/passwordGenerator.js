@@ -17,13 +17,32 @@ function generatePassword(length = 16) {
   return password;
 }
 
-function updatePassword() {
-  const password = generatePassword(Number(lengthInput.value));
+async function savePassword(password) {
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) return;
+
+  const { error } = await supabase.from("vault").insert({
+    user_id: user.id,
+    password,
+  });
+
+  if (error) {
+    console.error(error);
+  }
+}
+
+async function updatePassword() {
+  const length = Number(lengthInput.value) || 16;
+
+  const password = generatePassword(length);
 
   generatedPass.textContent = password;
 
   if (saveVault.checked) {
-    console.log("Save to vault:", password);
+    await savePassword(password);
   }
 }
 
