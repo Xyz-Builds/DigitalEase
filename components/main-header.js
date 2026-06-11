@@ -52,20 +52,3 @@ document.getElementById("main-header").innerHTML = `
 
 </header>
 `;
-
-const hamburger = document.querySelector(".hamburger");
-const sidebar = document.querySelector(".sidebar");
-const mainBody = document.querySelector("main");
-
-if (sidebar) {
-  hamburger.addEventListener("mouseenter", (e) => {
-    e.stopPropagation();
-    mobileMenu.classList.add("open");
-  });
-
-  document.addEventListener("mouseleave", (e) => {
-    if (sidebar.classList.contains("open") && !sidebar.contains(e.target)) {
-      sidebar.classList.remove("open");
-    }
-  });
-}

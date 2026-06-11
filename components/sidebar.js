@@ -35,19 +35,26 @@ document
 console.log(user.user_metadata);
 
 document.getElementById("sidebar").innerHTML = `
-  <nav>
+<nav>
 
-    <hr class="account-divider">
+  <div class="account-wrap">
+    <img class="pfp" src="${meta.avatar_url}">
 
-    <div class="account-wrap">
-      <img class="pfp" src="${meta.avatar_url}">
+    <div class="account-info">
+      <div>${meta.full_name}</div>
 
-      <div class="account-info" id="account-info">
-        ${meta.full_name}
-        <button class="sign-out-btn" id="sign-out-btn">
-          <span><span class="ms">logout</span> Sign Out</span>
-        </button>
-      </div>
+      <button class="sign-out-btn" id="sign-out-btn">
+        <span>
+          <span class="ms">logout</span>
+          Sign Out
+        </span>
+      </button>
     </div>
-  </nav>
+  </div>
+
+</nav>
 `;
+
+document
+  .getElementById("sign-out-btn")
+  ?.addEventListener("click", window.signOut);
