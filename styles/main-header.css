@@ -281,7 +281,7 @@ main.open {
   transition: filter 0.32s ease;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
   header .buttons,
   header .sign-out-btn {
     display: none;

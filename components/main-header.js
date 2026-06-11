@@ -2,6 +2,41 @@ const base = new URL("../", import.meta.url).href;
 
 const { supabase } = await import(`${base}scripts/supabase.js`);
 
+const {
+  data: { user },
+  error,
+} = await supabase.auth.getUser();
+
+console.log("USER:", user);
+console.log("ERROR:", error);
+
+if (!user) {
+  window.location.href = `${base}pages/signin.html`;
+  throw new Error("User not authenticated");
+}
+
+const meta = user.user_metadata ?? {};
+
+const accountInfo = document.getElementById("account-info");
+if (accountInfo) {
+  accountInfo.textContent =
+    `${meta.first_name || ""} ${meta.last_name || ""}`.trim();
+}
+
+const avatar = document.getElementById("avatar");
+if (avatar) {
+  avatar.src = meta.avatar_url || "";
+}
+
+window.signOut = async () => {
+  await supabase.auth.signOut();
+  window.location.href = `${base}pages/signup.html`;
+};
+
+document
+  .getElementById("sign-out-btn")
+  ?.addEventListener("click", window.signOut);
+
 document.getElementById("main-header").innerHTML = `
 <header>
   <a href="${base}index.html" class="logo-link">
@@ -36,46 +71,6 @@ document.getElementById("main-header").innerHTML = `
 
 </header>
 `;
-
-const {
-  data: { user },
-  error,
-} = await supabase.auth.getUser();
-
-console.log("USER:", user);
-console.log("ERROR:", error);
-
-if (!user) {
-  window.location.href = `${base}pages/signin.html`;
-  throw new Error("User not authenticated");
-}
-
-const meta = user.user_metadata ?? {};
-
-const accountInfo = document.getElementById("account-info");
-if (accountInfo) {
-  accountInfo.textContent =
-    `${meta.first_name || ""} ${meta.last_name || ""}`.trim();
-}
-
-const welcomeMsg = document.getElementById("welcome-msg");
-if (welcomeMsg) {
-  welcomeMsg.textContent = `Welcome, ${meta.first_name || "User"}!`;
-}
-
-const avatar = document.getElementById("avatar");
-if (avatar) {
-  avatar.src = meta.avatar_url || "";
-}
-
-window.signOut = async () => {
-  await supabase.auth.signOut();
-  window.location.href = `${base}pages/signup.html`;
-};
-
-document
-  .getElementById("sign-out-btn")
-  ?.addEventListener("click", window.signOut);
 
 const hamburger = document.querySelector(".hamburger");
 const mobileMenu = document.querySelector(".side-bar");
