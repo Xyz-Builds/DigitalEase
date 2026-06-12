@@ -117,6 +117,10 @@ const lessonTitle = document.getElementById("lessonTitle");
 const lessonContent = document.getElementById("lessonContent");
 const completeLessonBtn = document.getElementById("completeLessonBtn");
 
+if (lesson.id == 1) {
+  completeLessonBtn.textContent = "Complete Introduction";
+}
+
 if (!lesson) {
   lessonTitle.textContent = "Lesson Not Found";
   lessonContent.innerHTML = "<p>This lesson does not exist.</p>";
@@ -129,18 +133,37 @@ const {
   data: { user },
 } = await supabase.auth.getUser();
 
+if (user) {
+  const { data: progress } = await supabase
+    .from("lesson_progress")
+    .select("completed")
+    .eq("user_id", user.id)
+    .eq("lesson_id", lessonId)
+    .maybeSingle();
+
+  if (progress?.completed) {
+    completeLessonBtn.textContent = "Completed ✓";
+    completeLessonBtn.disabled = true;
+  }
+}
+
 async function completeLessonFunc() {
   if (!user) {
     console.error("No user logged in");
     return;
   }
 
-  const { error } = await supabase.from("lesson_progress").upsert({
-    user_id: user.id,
-    lesson_id: lessonId,
-    completed: true,
-    completed_at: new Date().toISOString(),
-  });
+  const { error } = await supabase.from("lesson_progress").upsert(
+    {
+      user_id: user.id,
+      lesson_id: lessonId,
+      completed: true,
+      completed_at: new Date().toISOString(),
+    },
+    {
+      onConflict: "user_id,lesson_id",
+    },
+  );
 
   if (error) {
     console.error(error);
