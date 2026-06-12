@@ -135,7 +135,7 @@ nav:hover .section-title {
 .pfp {
   width: 42px;
   height: 42px;
-  transform: translateX(-8px);
+  transform: translateX(-3px);
   border-radius: 999px;
   margin-left: 0;
   flex-shrink: 0;
@@ -200,4 +200,11 @@ nav .sign-out-btn:hover {
 .sign-out-btn .ms {
   font-size: 15px;
   font-variation-settings: "wght" 300;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding-left: 86px;
+    padding-right: 16px;
+  }
 }

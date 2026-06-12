@@ -30,7 +30,7 @@ main {
 .hero-card h1 {
   color: white;
   font-family: Syne;
-  font-size: 38px;
+  font-size: clamp(28px, 34px, 38px);
   margin-bottom: 12px;
 }
 
