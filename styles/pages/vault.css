@@ -32,6 +32,7 @@ main {
 .heading-wrap {
   display: flex;
   position: relative;
+  margin-bottom: 1.5rem;
   justify-content: center;
   text-align: center;
   flex-direction: column;
@@ -41,11 +42,12 @@ main {
 .vault-header {
   font-family: Syne;
   justify-self: center;
-  font-size: 30px;
+  font-size: 40px;
   color: white;
 }
 
 .vault-subheader {
   color: lightgray;
   font-family: Geist;
+  letter-spacing: 0.15em;
 }
