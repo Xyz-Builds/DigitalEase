@@ -1,3 +1,7 @@
+main {
+  padding: 100px 48px 48px 118px;
+}
+
 #vaultContainer {
   display: flex;
   flex-direction: column;
@@ -7,6 +11,7 @@
 .vault-card {
   background-color: rgba(255, 255, 255, 0.04);
   padding-inline: 20px;
+  width: 60%;
   display: flex;
   gap: 1rem;
   padding-block: 20px;
