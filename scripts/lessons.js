@@ -1,91 +1,129 @@
-const lessonId = new URLSearchParams(window.location.search).get("id");
 import { supabase } from "../scripts/supabase.js";
+
+const lessonId = Number(new URLSearchParams(window.location.search).get("id"));
 
 const lessons = [
   {
     id: 1,
     title: "The Introduction",
     content: `
-Welcome to DigitalEase!
+      <p>Welcome to DigitalEase!</p>
 
-The internet helps us learn, communicate, play games, shop, and connect with people around the world. However, just like the real world, the internet has risks that users should be aware of.
+      <p>
+        The internet helps us learn, communicate, play games, shop, and connect
+        with people around the world. However, just like the real world, the
+        internet has risks that users should be aware of.
+      </p>
 
-Cybersecurity is the practice of protecting yourself, your accounts, and your personal information online. Fortunately, staying safe online doesn't require advanced technical knowledge. A few good habits can dramatically reduce your chances of becoming a victim of scams, hacked accounts, or other online threats.
+      <p>
+        Cybersecurity is the practice of protecting yourself, your accounts,
+        and your personal information online.
+      </p>
 
-Throughout this course, you'll learn how to:
-• Create strong passwords
-• Recognize phishing scams
-• Protect personal information
-• Browse the internet safely
-• Build smart online habits
+      <h2>In this course you'll learn:</h2>
 
-Cybersecurity isn't about being afraid of technology. It's about using technology safely and confidently.
-`,
+      <ul>
+        <li>How to create strong passwords</li>
+        <li>How to recognize phishing scams</li>
+        <li>How to protect personal information</li>
+        <li>How to browse safely online</li>
+        <li>How to build smart digital habits</li>
+      </ul>
+
+      <p>
+        Cybersecurity isn't about being afraid of technology.
+        It's about using technology safely and confidently.
+      </p>
+    `,
   },
 
   {
     id: 2,
     title: "Strong Passwords",
     content: `
-Passwords are the first line of defense for your online accounts. A weak password can often be guessed or cracked in seconds.
+      <p>
+        Passwords are the first line of defense for your online accounts.
+      </p>
 
-A strong password should:
-• Be at least 12 characters long
-• Include uppercase and lowercase letters
-• Include numbers
-• Include symbols such as ! @ # $ %
-• Be unique for every account
+      <h2>A strong password should:</h2>
 
-Examples:
+      <ul>
+        <li>Be at least 12 characters long</li>
+        <li>Contain uppercase letters</li>
+        <li>Contain lowercase letters</li>
+        <li>Contain numbers</li>
+        <li>Contain symbols</li>
+      </ul>
 
-Weak Password:
-password123
+      <h2>Weak Password Example</h2>
 
-Strong Password:
-T!g3r#Sky$2026
+      <div class="example-box">
+        password123
+      </div>
 
-Avoid using:
-• Your name
-• Birthdays
-• Phone numbers
-• Common words
+      <h2>Strong Password Example</h2>
 
-Our built-in password generator can help you generate and store strong passwords securely in your personal vault. Never share your passwords with anyone you do not trust.
-`,
+      <div class="example-box">
+        T!g3r#Sky$2026
+      </div>
+
+      <p>
+        Never reuse the same password across multiple accounts.
+      </p>
+    `,
   },
 
   {
     id: 3,
     title: "Phishing Awareness",
     content: `
-Phishing is a type of scam where attackers try to trick people into revealing sensitive information such as passwords, credit card numbers, or personal details.
+      <p>
+        Phishing is a scam where attackers attempt to trick you into
+        revealing personal information.
+      </p>
 
-Phishing attempts often arrive through:
-• Emails
-• Text messages
-• Social media messages
-• Fake websites
+      <h2>Phishing can arrive through:</h2>
 
-Warning signs include:
-• Urgent messages demanding immediate action
-• Suspicious links
-• Spelling or grammar mistakes
-• Requests for passwords or financial information
+      <ul>
+        <li>Emails</li>
+        <li>Text messages</li>
+        <li>Social media messages</li>
+        <li>Fake websites</li>
+      </ul>
 
-Example:
+      <h2>Warning Signs</h2>
 
-"Your account has been suspended. Click here immediately to verify your information."
+      <ul>
+        <li>Urgent messages</li>
+        <li>Suspicious links</li>
+        <li>Grammar mistakes</li>
+        <li>Requests for passwords</li>
+      </ul>
 
-Before clicking any link:
-• Check the sender
-• Verify the website address
-• Look for unusual wording
-• Contact the company directly if unsure
+      <div class="example-box">
+        "Your account has been suspended. Click here immediately to verify your information."
+      </div>
 
-Remember: legitimate companies rarely ask for sensitive information through email or text messages.
-`,
+      <p>
+        Always verify links and senders before entering any information.
+      </p>
+    `,
   },
 ];
+
+const lesson = lessons.find((lesson) => lesson.id === lessonId);
+
+const lessonTitle = document.getElementById("lessonTitle");
+const lessonContent = document.getElementById("lessonContent");
+const completeLessonBtn = document.getElementById("completeLessonBtn");
+
+if (!lesson) {
+  lessonTitle.textContent = "Lesson Not Found";
+  lessonContent.innerHTML = "<p>This lesson does not exist.</p>";
+} else {
+  lessonTitle.textContent = lesson.title;
+  lessonContent.innerHTML = lesson.content;
+}
 
 const {
   data: { user },
@@ -99,7 +137,7 @@ async function completeLessonFunc() {
 
   const { error } = await supabase.from("lesson_progress").upsert({
     user_id: user.id,
-    lesson_id: Number(lessonId),
+    lesson_id: lessonId,
     completed: true,
     completed_at: new Date().toISOString(),
   });
@@ -107,22 +145,9 @@ async function completeLessonFunc() {
   if (error) {
     console.error(error);
   } else {
-    console.log("Lesson saved successfully");
+    completeLessonBtn.textContent = "Completed ✓";
+    completeLessonBtn.disabled = true;
   }
 }
-
-const lesson = lessons.find((lesson) => lesson.id == Number(lessonId));
-
-console.log("found lesson:", lesson);
-
-const completeLessonBtn = document.getElementById("completeLessonBtn");
-
-const lessonTitle = document.getElementById("lessonTitle");
-
-const lessonContent = document.getElementById("lessonContent");
-
-lessonTitle.textContent = lesson.title;
-
-lessonContent.textContent = lesson.content;
 
 completeLessonBtn.addEventListener("click", completeLessonFunc);

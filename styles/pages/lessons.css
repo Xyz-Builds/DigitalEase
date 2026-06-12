@@ -1,60 +1,80 @@
 main {
-  padding: 100px 48px 48px 118px;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
 }
 
 .lesson-wrap {
-  background: rgba(255, 255, 255, 0.04);
-  display: flex;
-  justify-content: center;
+  width: min(900px, 100%);
+  background: #111;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 18px;
-  box-shadow: 0 0 60px rgb(157, 255, 142, 0.1);
-  padding: 36px;
-  padding-inline: 46px;
-  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  padding: 40px;
 }
 
 #lessonTitle {
   color: white;
-  font-family: Syne;
-  font-size: 38px;
-  text-align: center;
-  margin-bottom: 12px;
+  font-family: "Syne", sans-serif;
+  font-size: 2.4rem;
+  margin-bottom: 30px;
 }
 
 #lessonContent {
-  color: rgba(255, 255, 255, 0.7);
-  font-family: Geist;
-  padding-block: 15px;
-  font-size: 14px;
-  line-height: 1.7;
-  max-width: 700px;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "Geist", sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+#lessonContent p {
+  margin-bottom: 20px;
+}
+
+#lessonContent h2 {
+  color: white;
+  font-size: 1.3rem;
+  margin-top: 30px;
+  margin-bottom: 12px;
+}
+
+#lessonContent ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+#lessonContent li {
+  margin-bottom: 8px;
+}
+
+.example-box {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(132, 255, 0, 0.15);
+  border-radius: 12px;
+  padding: 18px;
+  margin: 16px 0;
+  color: #84ff00;
+  font-family: monospace;
+  font-size: 0.95rem;
 }
 
 #completeLessonBtn {
-  background: #c8f031;
-  color: #0b1220;
+  margin-top: 35px;
+  padding: 14px 22px;
   border: none;
   border-radius: 12px;
-  padding: 14px 24px;
+  background: #84ff00;
+  color: black;
   font-family: "Geist", sans-serif;
-  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.25s ease;
-  box-shadow: 0 4px 20px rgba(200, 240, 49, 0.2);
+  transition: transform 0.2s;
 }
 
 #completeLessonBtn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(200, 240, 49, 0.35);
 }
 
-#completeLessonBtn:active {
-  transform: translateY(0);
-}
-
-#completeLessonBtn:focus-visible {
-  outline: 2px solid #c8f031;
-  outline-offset: 4px;
+#completeLessonBtn:disabled {
+  opacity: 0.6;
+  cursor: default;
 }
