@@ -43,9 +43,15 @@
         <h2>Your Journey</h2>
 
         <div class="stats-grid">
-          <article class="stat-card">
+          <article class="stat-card lessons-card">
             <span class="stat-value">0 / 6</span>
+            <div class="progress-bar">
+              <div id="progressFill"></div>
+            </div>
             <span class="stat-label">Lessons Completed</span>
+            <a id="continueBtn"
+              >Continue Learning <span class="ms">arrow_forward</span></a
+            >
           </article>
 
           <article class="stat-card">
@@ -87,11 +93,11 @@
         <div class="learning-card">
           <div class="learning-top">
             <span>Cybersecurity Fundamentals</span>
-            <span>0%</span>
+            <span id="courseProgress">0%</span>
           </div>
 
           <div class="progress-bar">
-            <div class="progress-fill"></div>
+            <div class="progress-fill" id="courseProgressFill"></div>
           </div>
 
           <p>
