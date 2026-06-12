@@ -1,6 +1,10 @@
 import { supabase } from "../scripts/supabase.js";
 import { lessons } from "../scripts/lessonsData.js";
 
+const {
+  data: { user },
+} = await supabase.auth.getUser();
+
 const lessonId = Number(new URLSearchParams(window.location.search).get("id"));
 
 const lesson = lessons.find((lesson) => lesson.id === lessonId);
@@ -31,7 +35,7 @@ const lessonTitle = document.getElementById("lessonTitle");
 const lessonContent = document.getElementById("lessonContent");
 const completeLessonBtn = document.getElementById("completeLessonBtn");
 
-if (lesson.id == 1) {
+if (lesson?.id === 1) {
   completeLessonBtn.textContent = "Complete Introduction";
 }
 
@@ -42,10 +46,6 @@ if (!lesson) {
   lessonTitle.textContent = lesson.title;
   lessonContent.innerHTML = lesson.content;
 }
-
-const {
-  data: { user },
-} = await supabase.auth.getUser();
 
 if (user) {
   const { data: progress } = await supabase
