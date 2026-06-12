@@ -26,11 +26,19 @@ const {
 } = await supabase.auth.getUser();
 
 async function completeLessonFunc() {
-  const { error } = await supabase.from("lesson_progress").upsert({
+  if (!user) {
+    console.error("No user logged in");
+    return;
+  }
+
+  console.log("Auth UID:", user.id);
+  console.log("Lesson ID:", Number(lessonId));
+
+  const { error } = await supabase.from("lesson_progress").insert({
     user_id: user.id,
     lesson_id: Number(lessonId),
     completed: true,
-    completed_at: new Date(),
+    completed_at: new Date().toISOString(),
   });
 
   if (error) {
@@ -48,8 +56,8 @@ const lessonTitle = document.getElementById("lessonTitle");
 
 const lessonContent = document.getElementById("lessonContent");
 
-lessonTitle.textContent = lessons.title;
+lessonTitle.textContent = lesson.title;
 
-lessonContent.textContent = lessons.content;
+lessonContent.textContent = lesson.content;
 
 completeLessonBtn.addEventListener("click", completeLessonFunc);
