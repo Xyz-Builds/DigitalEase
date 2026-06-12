@@ -4,10 +4,13 @@ main {
 
 .lesson-wrap {
   background: rgba(255, 255, 255, 0.04);
+  display: flex;
+  justify-content: center;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 18px;
   box-shadow: 0 0 60px rgb(157, 255, 142, 0.1);
   padding: 36px;
+  padding-inline: 46px;
   backdrop-filter: blur(12px);
 }
 
@@ -15,12 +18,14 @@ main {
   color: white;
   font-family: Syne;
   font-size: 38px;
+  text-align: center;
   margin-bottom: 12px;
 }
 
 #lessonContent {
   color: rgba(255, 255, 255, 0.7);
   font-family: Geist;
+  padding-block: 15px;
   font-size: 14px;
   line-height: 1.7;
   max-width: 700px;
