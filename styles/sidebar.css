@@ -218,8 +218,12 @@ nav .sign-out-btn:hover {
     z-index: 2000;
   }
 
-  main.open {
+  main {
     padding-left: 16px !important;
+  }
+
+  main.open {
+    filter: brightness(0.7);
   }
 
   nav:hover {
