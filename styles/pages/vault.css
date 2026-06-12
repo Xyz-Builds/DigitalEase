@@ -5,17 +5,17 @@ main {
 #vaultContainer {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.8rem;
 }
 
 .vault-card {
   background-color: rgba(255, 255, 255, 0.04);
-  padding-inline: 20px;
+  padding-inline: 30px;
   width: 60%;
   display: flex;
-  gap: 1rem;
-  padding-block: 20px;
-  border-radius: 15px;
+  gap: 2rem;
+  padding-block: 25px;
+  border-radius: 10px;
 }
 
 .vault-password {
@@ -26,5 +26,22 @@ main {
 
 .vault-date {
   color: rgb(160, 160, 160);
+  font-family: Geist;
+}
+
+.heading-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.vault-header {
+  font-family: Syne;
+  justify-self: center;
+  font-size: 30px;
+}
+
+.vault-subheader {
+  color: lightgray;
   font-family: Geist;
 }
