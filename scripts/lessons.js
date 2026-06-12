@@ -1,4 +1,5 @@
 const lessonId = new URLSearchParams(window.location.search).get("id");
+import { supabase } from "../scripts/supabase.js";
 
 const lessons = [
   {
