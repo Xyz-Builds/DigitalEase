@@ -196,6 +196,7 @@ nav .sign-out-btn:hover {
   align-items: center;
   gap: 5px;
 }
+
 .sign-out-btn .ms {
   font-size: 15px;
   font-variation-settings: "wght" 300;
