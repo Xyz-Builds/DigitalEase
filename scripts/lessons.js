@@ -5,6 +5,28 @@ const lessonId = Number(new URLSearchParams(window.location.search).get("id"));
 
 const lesson = lessons.find((lesson) => lesson.id === lessonId);
 
+if (!lesson) {
+  const { data: progress } = await supabase
+    .from("lesson_progress")
+    .select("lesson_id")
+    .eq("user_id", user.id)
+    .eq("completed", true)
+    .order("lesson_id", { ascending: false });
+
+  const highestCompletedLessonId =
+    progress.length > 0 ? progress[0].lesson_id : 1;
+
+  const nextLessonExists = lessons.some(
+    (lesson) => lesson.id === highestCompletedLessonId + 1,
+  );
+
+  const redirectLessonId = nextLessonExists
+    ? highestCompletedLessonId + 1
+    : highestCompletedLessonId;
+
+  window.location.search = `?id=${redirectLessonId}`;
+}
+
 const lessonTitle = document.getElementById("lessonTitle");
 const lessonContent = document.getElementById("lessonContent");
 const completeLessonBtn = document.getElementById("completeLessonBtn");
