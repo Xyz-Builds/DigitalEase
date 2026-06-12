@@ -121,10 +121,10 @@ nav:hover .section-title {
   gap: 16px;
 
   margin: 10px;
-  margin-left: 7px;
   padding: 12px;
 
-  border-radius: 14px;
+  border-top-right-radius: 14px;
+  border-bottom-right-radius: 14px;
 
   background: rgba(255, 255, 255, 0.04);
 
@@ -134,7 +134,7 @@ nav:hover .section-title {
 .pfp {
   width: 42px;
   height: 42px;
-  transform: translateX(-10px);
+  transform: translateX(-8px);
   border-radius: 999px;
   margin-left: 0;
   flex-shrink: 0;
