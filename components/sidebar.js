@@ -29,6 +29,20 @@ document
   .getElementById("sign-out-btn")
   ?.addEventListener("click", window.signOut);
 
+const { data: progress } = await supabase
+  .from("lesson_progress")
+  .select("lesson_id")
+  .eq("user_id", user.id)
+  .eq("completed", true)
+  .order("lesson_id", { ascending: false })
+  .limit(1);
+
+let lessonHref = `${base}pages/dashboard/lessons.html?id=1`;
+
+if (progress && progress.length > 0) {
+  lessonHref = `${base}pages/dashboard/lessons.html?id=${progress[0].lesson_id + 1}`;
+}
+
 document.getElementById("sidebar").innerHTML = `
 <nav>
   <h2 class="section-title">Dashboard</h2>
@@ -38,7 +52,7 @@ document.getElementById("sidebar").innerHTML = `
   <h2 class="section-title">Features</h2>
   <div class="side-buttons">
     <a class="side-a" href="${base}pages/dashboard/passwordGenerator.html"><button class="side-btn"><span class="ms">password</span>Password Generator</button></a>
-    <a class="side-a" href="${base}pages/dashboard/lessons.html"><button class="side-btn"><span class="ms">book_ribbon</span>Lessons</button></a>
+    <a class="side-a" href="${lessonHref}"><button class="side-btn"><span class="ms">book_ribbon</span>Lessons</button></a>
     <a class="side-a"><button class="side-btn"><span class="ms">gpp_maybe</span>Phishing Simulator</button></a>
     <a class="side-a" href="${base}pages/dashboard/vault.html"><button class="side-btn"><span class="ms">mobile_lock_landscape</span>Vault</button></a>
   </div>

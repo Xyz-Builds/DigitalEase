@@ -48,7 +48,12 @@ async function completeLessonFunc() {
   }
 }
 
-const lesson = lessons.find((lesson) => lesson.id == lessonId);
+console.log("lessonId:", lessonId);
+console.log("lessons:", lessons);
+
+const lesson = lessons.find((lesson) => lesson.id == Number(lessonId));
+
+console.log("found lesson:", lesson);
 
 const completeLessonBtn = document.getElementById("completeLessonBtn");
 
