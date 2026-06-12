@@ -1,0 +1,55 @@
+main {
+  padding: 100px 48px 48px 118px;
+}
+
+.lesson-wrap {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 0 60px rgb(157, 255, 142, 0.1);
+  padding: 36px;
+  backdrop-filter: blur(12px);
+}
+
+#lessonTitle {
+  color: white;
+  font-family: Syne;
+  font-size: 38px;
+  margin-bottom: 12px;
+}
+
+#lessonContent {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: Geist;
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 700px;
+}
+
+#completeLessonBtn {
+  background: #c8f031;
+  color: #0b1220;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 24px;
+  font-family: "Geist", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 20px rgba(200, 240, 49, 0.2);
+}
+
+#completeLessonBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(200, 240, 49, 0.35);
+}
+
+#completeLessonBtn:active {
+  transform: translateY(0);
+}
+
+#completeLessonBtn:focus-visible {
+  outline: 2px solid #c8f031;
+  outline-offset: 4px;
+}

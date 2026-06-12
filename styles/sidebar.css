@@ -121,6 +121,7 @@ nav:hover .section-title {
   gap: 16px;
 
   margin: 10px;
+  margin-left: 0;
   padding: 12px;
 
   border-top-right-radius: 14px;
