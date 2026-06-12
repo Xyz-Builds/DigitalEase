@@ -31,6 +31,9 @@ main {
 
 .heading-wrap {
   display: flex;
+  position: relative;
+  justify-content: center;
+  text-align: center;
   flex-direction: column;
   gap: 0.4rem;
 }
@@ -39,6 +42,7 @@ main {
   font-family: Syne;
   justify-self: center;
   font-size: 30px;
+  color: white;
 }
 
 .vault-subheader {
