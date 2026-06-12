@@ -48,8 +48,8 @@ const lessonTitle = document.getElementById("lessonTitle");
 
 const lessonContent = document.getElementById("lessonContent");
 
-lessonTitle.textContent = lesson.title;
+lessonTitle.textContent = lessons.title;
 
-lessonContent.textContent = lesson.content;
+lessonContent.textContent = lessons.content;
 
 completeLessonBtn.addEventListener("click", completeLessonFunc);
