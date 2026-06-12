@@ -45,5 +45,30 @@ document.getElementById("main-header").innerHTML = `
     <span><span class="ms">logout</span> Sign Out</span>
   </button>
 
+  <button class="side-toggle"><span class="ms">menu_open</span></button>
+
 </header>
 `;
+
+const sideToggle = document.querySelector(".side-toggle");
+const sidebar = document.querySelector("nav");
+const main = document.querySelector("main");
+
+sideToggle.addEventListener("click", (e) => {
+  e.stopPropagation();
+
+  sidebar.classList.toggle("open");
+  main.classlist.toggle("open");
+  sideToggle.classList.toggle("open");
+});
+
+document.addEventListener("click", (e) => {
+  if (
+    sidebar.classList.contains("open") &&
+    !sidebar.contains(e.target) &&
+    !sideToggle.contains(e.target)
+  ) {
+    sidebar.classList.remove("open");
+    sideToggle.classList.remove("open");
+  }
+});
