@@ -106,6 +106,8 @@
     <script type="module" src="../../components/sidebar.js"></script>
 
     <script>
+      import { supabase } from "../scripts/supabase.js";
+
       const [firstName, lastName] = meta.full_name.split(" ");
 
       const welcomeMsg = document.getElementById("welcome-msg");
