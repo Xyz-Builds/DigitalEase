@@ -112,6 +112,13 @@ header .sign-out-btn:hover {
   font-variation-settings: "wght" 300;
 }
 
+header .side-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
 header .side-toggle span {
   display: none;
   background: none;
@@ -135,6 +142,12 @@ header .side-toggle span:hover {
   header .buttons,
   header .sign-out-btn {
     display: none;
+  }
+
+  header .side-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   header .side-toggle span {

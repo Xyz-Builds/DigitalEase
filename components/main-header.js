@@ -51,24 +51,28 @@ document.getElementById("main-header").innerHTML = `
 `;
 
 const sideToggle = document.querySelector(".side-toggle");
-const sidebar = document.querySelector("nav");
 const main = document.querySelector("main");
 
-sideToggle.addEventListener("click", (e) => {
+sideToggle?.addEventListener("click", (e) => {
   e.stopPropagation();
 
-  sidebar.classList.toggle("open");
-  main.classlist.toggle("open");
+  const sidebar = document.querySelector("#sidebar nav");
+
+  sidebar?.classList.toggle("open");
+  main.classList.toggle("open");
   sideToggle.classList.toggle("open");
 });
 
 document.addEventListener("click", (e) => {
+  const sidebar = document.querySelector("#sidebar nav");
+
   if (
-    sidebar.classList.contains("open") &&
+    sidebar?.classList.contains("open") &&
     !sidebar.contains(e.target) &&
-    !sideToggle.contains(e.target)
+    !e.target.closest(".side-toggle")
   ) {
     sidebar.classList.remove("open");
-    sideToggle.classList.remove("open");
+    main.classList.remove("open");
+    sideToggle?.classList.remove("open");
   }
 });
