@@ -1,3 +1,7 @@
+const base = new URL("../", import.meta.url).href;
+
+const { supabase } = await import(`${base}scripts/supabase.js`);
+
 const checkupCard = document.querySelector(".checkup-wrap");
 
 const questions = [
@@ -179,11 +183,15 @@ async function showResults() {
     data: { user },
   } = await supabase.auth.getUser();
 
-  await supabase.from("user_stats").upsert({
+  const { error } = await supabase.from("user_stats").upsert({
     user_id: user.id,
     safety_score: percentage,
     updated_at: new Date(),
   });
+
+  if (error) {
+    console.error(error);
+  }
 
   checkupCard.innerHTML = `
     <h1>Your Privacy Score</h1>
