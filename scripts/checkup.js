@@ -9,6 +9,8 @@ const questions = [
     correctAnswer: "Yes",
     partialAnswer: "Not Sure",
     points: 25,
+    advice:
+      "Use a different password for every account to reduce the impact of data breaches.",
   },
 
   {
@@ -19,6 +21,8 @@ const questions = [
     correctAnswer: "Yes",
     partialAnswer: "Not Sure",
     points: 20,
+    advice:
+      "Enable two-factor authentication on important accounts for extra protection.",
   },
 
   {
@@ -29,6 +33,8 @@ const questions = [
     correctAnswer: "Yes",
     partialAnswer: "Not Sure",
     points: 15,
+    advice:
+      "Set social media profiles to private to limit who can view your information.",
   },
 
   {
@@ -39,6 +45,8 @@ const questions = [
     correctAnswer: "Yes",
     partialAnswer: "Sometimes",
     points: 25,
+    advice:
+      "Consider using security software or browser protection tools to help detect threats.",
   },
 
   {
@@ -49,6 +57,8 @@ const questions = [
     correctAnswer: "Yes",
     partialAnswer: "Sometimes",
     points: 20,
+    advice:
+      "Update important passwords periodically, especially after security incidents.",
   },
 
   {
@@ -59,6 +69,8 @@ const questions = [
     correctAnswer: "No",
     partialAnswer: "Sometimes",
     points: 25,
+    advice:
+      "Avoid accepting requests from strangers to reduce scams and impersonation attempts.",
   },
 
   {
@@ -69,11 +81,14 @@ const questions = [
     correctAnswer: "Yes",
     partialAnswer: "Sometimes",
     points: 20,
+    advice:
+      "Review permissions before installing apps and deny unnecessary access.",
   },
 ];
 
 let currentQuestion = 0;
 let score = 0;
+let recommendations = [];
 
 function beginCheckup() {
   renderQuestion();
@@ -92,7 +107,12 @@ function renderQuestion() {
       ></div>
     </div>
 
+    <h4 class="progress">
+      Question ${currentQuestion + 1} of ${questions.length}
+    </h4>
+
     <h1 id="question">${question.question}</h1>
+
     <h2 id="category">${question.category}</h2>
 
     <hr class="question-divider">
@@ -118,8 +138,12 @@ function handleAnswer(answer) {
 
   if (answer === question.correctAnswer) {
     score += question.points;
-  } else if (answer === question.partialAnswer) {
-    score += question.points / 2;
+  } else {
+    recommendations.push(question.advice);
+
+    if (answer === question.partialAnswer) {
+      score += question.points / 2;
+    }
   }
 
   currentQuestion++;
@@ -131,7 +155,7 @@ function handleAnswer(answer) {
   }
 }
 
-function showResults() {
+async function showResults() {
   const maxScore = questions.reduce(
     (total, question) => total + question.points,
     0,
@@ -151,10 +175,43 @@ function showResults() {
     grade = "Needs Improvement";
   }
 
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  await supabase.from("user_stats").upsert({
+    user_id: user.id,
+    safety_score: percentage,
+    updated_at: new Date(),
+  });
+
   checkupCard.innerHTML = `
     <h1>Your Privacy Score</h1>
-    <h2>${percentage}%</h2>
-    <h3>${grade}</h3>
+
+    <h2 class="score">${percentage}%</h2>
+
+    <h3 class="grade">${grade}</h3>
+
+    <div class="recommendations">
+      <h3>Recommendations</h3>
+
+      ${
+        recommendations.length
+          ? `
+        <ul>
+          ${recommendations
+            .map((recommendation) => `<li>${recommendation}</li>`)
+            .join("")}
+        </ul>
+      `
+          : `
+        <p>
+          Great job! We couldn't find any major
+          privacy concerns.
+        </p>
+      `
+      }
+    </div>
   `;
 }
 

@@ -72,3 +72,13 @@ const welcomeMsg = document.getElementById("welcome-msg");
 if (welcomeMsg) {
   welcomeMsg.innerHTML = `Welcome <span>${firstName}</span>`;
 }
+
+const { data } = await supabase
+  .from("user_stats")
+  .select("safety_score")
+  .eq("user_id", user.id)
+  .single();
+
+document.getElementById("safetyScore").textContent = data?.safety_score
+  ? `${data.safety_score}%`
+  : "--";

@@ -141,6 +141,43 @@ main {
   transition: width 0.25s ease;
 }
 
+.score {
+  font-size: clamp(3rem, 8vw, 5rem);
+  color: #84ff00;
+  margin-top: 16px;
+}
+
+.grade {
+  color: rgb(180, 180, 180);
+  margin-bottom: 32px;
+}
+
+.recommendations {
+  margin-top: 24px;
+}
+
+.recommendations h3 {
+  margin-bottom: 16px;
+  font-family: "Syne", sans-serif;
+}
+
+.recommendations ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-left: 20px;
+}
+
+.recommendations li {
+  color: rgb(200, 200, 200);
+  line-height: 1.6;
+}
+
+.recommendations p {
+  color: rgb(200, 200, 200);
+  line-height: 1.6;
+}
+
 @media (max-width: 750px) {
   main {
     padding: 90px 16px 24px 16px;
