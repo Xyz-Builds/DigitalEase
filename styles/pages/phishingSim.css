@@ -388,8 +388,8 @@ main {
 .grade-divider {
   width: 70%;
   justify-self: center;
-  border: 1px rgb(255, 255, 255, 0.6) solid;
-  margin-block: 10px;
+  border: 1px rgb(255, 255, 255, 0.3) solid;
+  margin-block: 3rem;
 }
 
 .dashboard-redirect {
@@ -398,18 +398,21 @@ main {
   text-decoration: none;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
+  cursor: pointer;
   letter-spacing: 0.15em;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .retake-btn {
   color: #7fff00;
   font-family: Geist;
   display: flex;
+  cursor: pointer;
+  align-items: center;
   gap: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  font-size: 16px;
+  font-size: 18px;
   transition: gap 0.2s ease-in-out;
 }
 
