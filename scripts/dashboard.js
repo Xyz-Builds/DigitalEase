@@ -86,11 +86,11 @@ document.getElementById("safetyScore").textContent = data?.safety_score
 const comment = document.querySelector(".stat-comment");
 
 if (data.safety_score >= 85) {
-  comment.textContent = `Perfect safety score!<br><span class='ms'>star</span> Keep browsing safely & smartly`;
+  comment.innerHTML = `Perfect safety score!<br><span class='ms'>star</span> Keep browsing safely & smartly`;
 } else if (data.safety_score >= 65) {
-  comment.textContent = `Good safety score!<br><span class='ms'>check</span> Super close to a perfect safety score`;
+  comment.innerHTML = `Good safety score!<br><span class='ms'>check</span> Super close to a perfect safety score`;
 } else if (data.safety_score >= 45) {
-  comment.textContent = `Average safety score!<br><span class='ms'>warning</span> Just a few improvements to becoming safer online!`;
+  comment.innerHTML = `Average safety score!<br><span class='ms'>warning</span> Just a few improvements to becoming safer online!`;
 } else {
-  comment.textContent = `Bad safety score!<br><span class='ms'>dangerous</span> You are vulnerable to digital threats`;
+  comment.innerHTML = `Bad safety score!<br><span class='ms'>dangerous</span> You are vulnerable to digital threats`;
 }
