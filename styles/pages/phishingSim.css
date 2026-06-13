@@ -7,32 +7,47 @@ main {
 }
 
 .heading {
-  font-size: 2.8rem;
-  text-align: center;
-  margin-bottom: 0.75rem;
-  font-weight: 800;
+  font-family: "Syne";
+
+  font-size: 4rem;
+
+  font-weight: 700;
+
+  line-height: 1.05;
+
+  margin-bottom: 1rem;
 }
 
 .sub-heading {
-  text-align: center;
-  color: #9ca3af;
-  font-size: 1rem;
-  line-height: 1.6;
-  max-width: 600px;
-  margin: 0 auto 2rem;
+  font-family: "Geist";
+
+  color: #a1a1aa;
+
+  max-width: 700px;
+
+  line-height: 1.8;
+
+  margin-bottom: 3rem;
 }
 
 .begin-btn {
-  display: block;
-  margin: 0 auto;
-  border: none;
-  background: #84cc16;
+  background: #7fff00;
+
   color: black;
+
+  border: none;
+
+  border-radius: 18px;
+
+  padding: 1rem 2rem;
+
+  font-family: "Elms Sans";
+
+  font-size: 1rem;
+
   font-weight: 700;
-  padding: 1rem 2.5rem;
-  border-radius: 12px;
+
   cursor: pointer;
-  transition: 0.2s;
 }
 
 .begin-btn:hover {
@@ -44,14 +59,19 @@ main {
 }
 
 .simulator-wrap {
-  max-width: 850px;
-  background: #161616;
-  border: 1px solid rgba(132, 204, 22, 0.15);
-  box-shadow: 0 0 30px rgba(132, 204, 22, 0.08);
-  margin: 2rem auto;
-  padding: 2rem;
-  border-radius: 20px;
-  color: white;
+  max-width: 1100px;
+
+  margin: 6rem auto;
+
+  padding: 3rem;
+
+  background: #272b31;
+
+  border: 1px solid #353a41;
+
+  border-radius: 32px;
+
+  box-shadow: 0 0 80px rgba(132, 255, 0, 0.06);
 }
 
 .progress {
@@ -61,21 +81,35 @@ main {
 }
 
 .email_field {
-  background: #1f2937;
-  border-radius: 16px;
-  padding: 1.5rem;
+  margin-top: 2rem;
+
+  background: #31353d;
+
+  border: 1px solid #3b4048;
+
+  border-radius: 24px;
+
+  overflow: hidden;
 }
 
 .header-wrap {
+  padding: 1.5rem;
+
   display: flex;
+
   flex-direction: column;
+
   gap: 0.75rem;
 }
 
 .header-wrap h2 {
-  font-size: 1rem;
+  font-family: "Geist";
+
+  font-size: 0.95rem;
+
   font-weight: 500;
-  word-break: break-word;
+
+  color: #d4d4d8;
 }
 
 .email-divider {
@@ -86,33 +120,58 @@ main {
 }
 
 .subject {
-  font-size: 1.4rem;
+  padding: 1.5rem;
+
+  font-family: "Syne";
+
+  font-size: 1.8rem;
+
   font-weight: 700;
 }
 
 .email-body {
-  line-height: 1.7;
-  color: #d1d5db;
+  padding: 0 1.5rem 1.5rem;
+
+  font-family: "Geist";
+
+  line-height: 1.9;
+
+  color: #b4b4b4;
 }
 
 .answer-wrap {
   display: flex;
+
   gap: 1rem;
-  margin-top: 1.5rem;
+
+  margin-top: 2rem;
 }
 
 .answer-btn {
   flex: 1;
-  border: none;
-  border-radius: 12px;
+
   padding: 1rem;
-  font-size: 1rem;
-  font-weight: 600;
+
+  border-radius: 18px;
+
+  background: #31353d;
+
+  border: 1px solid #3b4048;
+
+  color: white;
+
+  font-family: "Elms Sans";
+
+  font-weight: 700;
+
   cursor: pointer;
+
   transition: 0.2s;
 }
 
 .answer-btn:hover {
+  border-color: #7fff00;
+
   transform: translateY(-2px);
 }
 
@@ -131,11 +190,17 @@ main {
   color: white;
 }
 
-.feedback-flags {
-  margin-top: 1.5rem;
-  padding: 1rem;
-  background: #1f2937;
-  border-radius: 12px;
+.feedback-flags,
+.feedback-explanation {
+  margin-top: 1rem;
+
+  padding: 1.5rem;
+
+  background: #31353d;
+
+  border: 1px solid #3b4048;
+
+  border-radius: 20px;
 }
 
 .feedback-flags ul {
@@ -147,24 +212,24 @@ main {
   margin-bottom: 0.5rem;
 }
 
-.feedback-explanation {
-  margin-top: 1rem;
-  padding: 1rem;
-  background: #1f2937;
-  border-radius: 12px;
-}
-
 .next-btn {
-  width: 100%;
   margin-top: 1.5rem;
-  border: none;
-  border-radius: 12px;
-  padding: 1rem;
-  background: #84cc16;
+
+  background: #7fff00;
+
   color: black;
+
+  border: none;
+
+  border-radius: 18px;
+
+  padding: 1rem 2rem;
+
+  font-family: "Elms Sans";
+
   font-weight: 700;
+
   cursor: pointer;
-  transition: 0.2s;
 }
 
 .next-btn:hover {
@@ -172,14 +237,16 @@ main {
 }
 
 .score {
-  font-size: 4rem;
-  font-weight: 800;
-  color: #84cc16;
-  text-align: center;
+  font-family: "Syne";
+
+  font-size: 6rem;
+
+  font-weight: 700;
+
   margin: 1rem 0;
 }
 
-.ms {
+.heading-ms {
   color: #84cc16;
   margin-right: 0.5rem;
 }

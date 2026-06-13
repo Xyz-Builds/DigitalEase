@@ -252,12 +252,12 @@ function renderScenario() {
 
       <div class="header-wrap">
         <h2>
-          <span class="ms">subdirectory_arrow_right</span>
+          <span class="ms heading-ms">subdirectory_arrow_right</span>
           <b>From:</b> ${scenario.sender} &lt;${scenario.email}&gt;
         </h2>
 
         <h2>
-          <span class="ms">subdirectory_arrow_right</span>
+          <span class="ms heading-ms">subdirectory_arrow_right</span>
           <b>To:</b> ${user?.email || "user@example.com"}
         </h2>
       </div>
