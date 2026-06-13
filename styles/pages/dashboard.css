@@ -73,11 +73,49 @@ main {
 }
 
 .stat-comment {
-  color: rgba(255, 255, 255, 0.65);
+  margin-top: 10px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+
+  color: rgba(255, 255, 255, 0.75);
+  font-family: Geist;
+  font-size: 13px;
+  line-height: 1.5;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.comment-title {
   display: flex;
   align-items: center;
-  font-family: Geist;
-  font-size: 14px;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.success {
+  color: #84ff00;
+}
+
+.good {
+  color: #6cff7d;
+}
+
+.warning {
+  color: #ffc857;
+}
+
+.danger {
+  color: #ff6b6b;
+}
+
+.stat-comment .ms {
+  font-size: 18px;
+  color: #84ff00;
+  vertical-align: middle;
 }
 
 .actions-grid {

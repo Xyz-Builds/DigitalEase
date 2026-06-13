@@ -85,12 +85,36 @@ document.getElementById("safetyScore").textContent = data?.safety_score
 
 const comment = document.querySelector(".stat-comment");
 
-if (data.safety_score >= 85) {
-  comment.innerHTML = `Perfect safety score!<br><span class='ms'>star</span> Keep browsing safely & smartly`;
-} else if (data.safety_score >= 65) {
-  comment.innerHTML = `Good safety score!<br><span class='ms'>check</span> Super close to a perfect safety score`;
-} else if (data.safety_score >= 45) {
-  comment.innerHTML = `Average safety score!<br><span class='ms'>warning</span> Just a few improvements to becoming safer online!`;
+if (data?.safety_score >= 85) {
+  comment.innerHTML = `
+    <span class="comment-title success">
+      <span class="ms">star</span>
+      Excellent Protection
+    </span>
+    Keep browsing safely and smartly.
+  `;
+} else if (data?.safety_score >= 65) {
+  comment.innerHTML = `
+    <span class="comment-title good">
+      <span class="ms">check_circle</span>
+      Good Protection
+    </span>
+    You're close to achieving an excellent score.
+  `;
+} else if (data?.safety_score >= 45) {
+  comment.innerHTML = `
+    <span class="comment-title warning">
+      <span class="ms">warning</span>
+      Moderate Risk
+    </span>
+    A few improvements can greatly increase your safety.
+  `;
 } else {
-  comment.innerHTML = `Bad safety score!<br><span class='ms'>dangerous</span> You are vulnerable to digital threats`;
+  comment.innerHTML = `
+    <span class="comment-title danger">
+      <span class="ms">dangerous</span>
+      High Risk
+    </span>
+    Your online accounts may be vulnerable to threats.
+  `;
 }
