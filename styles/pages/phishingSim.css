@@ -22,6 +22,11 @@ main {
     0 0 80px rgba(132, 255, 0, 0.05);
 }
 
+.simulator-wrap.results {
+  height: 60%;
+  width: 80%;
+}
+
 .heading {
   font-family: "Syne";
   font-size: clamp(3rem, 6vw, 4.5rem);
@@ -89,6 +94,7 @@ main {
   height: 10px;
 
   margin-top: 1rem;
+  margin-bottom: 1.5rem;
 
   background: #31353d;
 
@@ -133,6 +139,11 @@ main {
   font-weight: 700;
 }
 
+.result {
+  color: white;
+  font-family: Geist !important;
+}
+
 .email_field {
   background: #31353d;
 
@@ -144,7 +155,8 @@ main {
 }
 
 .header-wrap {
-  padding: 1.75rem;
+  padding: 1.85rem;
+  padding-bottom: 0.5rem;
 
   display: flex;
 
@@ -165,7 +177,7 @@ main {
   line-height: 1.6;
 }
 
-.ms {
+.heading-ms {
   color: #7fff00;
 
   margin-right: 0.4rem;
@@ -174,6 +186,9 @@ main {
 .email-divider {
   border: none;
 
+  width: 70%;
+  justify-self: center;
+  margin-block: 20px;
   height: 1px;
 
   background: rgba(255, 255, 255, 0.06);
@@ -182,9 +197,10 @@ main {
 .subject {
   padding: 1.75rem 1.75rem 1rem;
 
-  font-family: "Syne";
+  font-family: Syne !important;
+  text-align: center;
 
-  font-size: 2rem;
+  font-size: 1.6rem;
 
   line-height: 1.1;
 
@@ -194,7 +210,7 @@ main {
 }
 
 .email-body {
-  padding: 0 1.75rem 1.75rem;
+  padding: 1rem 1.75rem 1.75rem;
 
   font-family: "Geist";
 
@@ -266,6 +282,7 @@ main {
   margin-top: 1.25rem;
 
   background: #31353d;
+  color: white;
 
   border: 1px solid rgba(255, 255, 255, 0.06);
 
@@ -304,7 +321,7 @@ main {
 }
 
 .next-btn {
-  margin-top: 1.5rem;
+  margin-top: 3rem;
 
   padding: 1rem 2rem;
 
@@ -332,7 +349,7 @@ main {
 }
 
 .score {
-  font-family: "Syne";
+  font-family: "Syne" !important;
 
   font-size: clamp(4rem, 12vw, 7rem);
 
@@ -347,6 +364,7 @@ main {
 
 .simulator-wrap h1 {
   font-family: "Syne";
+  color: white;
 
   font-size: 3rem;
 
@@ -357,6 +375,7 @@ main {
 
 .simulator-wrap h2 {
   font-family: "Geist";
+  color: white;
 
   margin-bottom: 1rem;
 }

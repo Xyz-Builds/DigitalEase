@@ -272,7 +272,7 @@ function renderScenario() {
       <hr class="email-divider">
 
       <h2 class="subject">
-        ${scenario.subject}
+        Subject: ${scenario.subject}
       </h2>
 
       <hr class="email-divider">
@@ -377,6 +377,7 @@ function showFeedback(answer) {
 
 async function showResults() {
   const percentage = Math.round((score / scenarios.length) * 100);
+  simulatorCard.classList.toggle("results");
 
   if (user) {
     const { error } = await supabase.from("user_stats").upsert(
@@ -407,11 +408,11 @@ async function showResults() {
   }
 
   simulatorCard.innerHTML = `
-    <h1>Your Result</h1>
+    <h1 class="result_h1">Your Result</h1>
 
     <h2 class="score">${percentage}%</h2>
 
-    <h3>${score}/${scenarios.length} Correct</h3>
+    <h3 class="result">${score}/${scenarios.length} Correct</h3>
 
     <div class="result-grade">
       ${grade}
