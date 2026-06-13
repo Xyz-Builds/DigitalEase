@@ -248,6 +248,13 @@ function renderScenario() {
       Email ${currentScenario + 1} of ${scenarios.length}
     </h3>
 
+    <div class="progress-bar">
+      <div
+        class="progress-fill" 
+        style="width:${((currentScenario + 1) / scenarios.length) * 100}%"
+      ></div>
+    </div>
+
     <article class="email_field">
 
       <div class="header-wrap">
@@ -406,7 +413,9 @@ async function showResults() {
 
     <h3>${score}/${scenarios.length} Correct</h3>
 
-    <p>${grade}</p>
+    <div class="result-grade">
+      ${grade}
+    </div> 
   `;
 }
 
