@@ -72,6 +72,14 @@ main {
   font-size: 14px;
 }
 
+.stat-comment {
+  color: rgba(255, 255, 255, 0.65);
+  display: flex;
+  align-items: center;
+  font-family: Geist;
+  font-size: 14px;
+}
+
 .actions-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
