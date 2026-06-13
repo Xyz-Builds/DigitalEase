@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../../styles/pages/checkup.css" />
+    <link rel="stylesheet" href="../../styles/pages/phishingSim.css" />
     <link rel="stylesheet" href="../../styles/main-header.css" />
     <link rel="stylesheet" href="../../styles/sidebar.css" />
     <link rel="stylesheet" href="../../styles/general.css" />
@@ -23,7 +23,7 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
       rel="stylesheet"
     />
-    <title>Privacy Checkup - DigitalEase</title>
+    <title>Phishing Simulator - DigitalEase</title>
   </head>
 
   <body>
@@ -31,23 +31,18 @@
     <div id="sidebar"></div>
 
     <main>
-      <section class="checkup-wrap">
-        <h1 class="heading">Let's review your digital privacy habits</h1>
+      <section class="simulator-wrap">
+        <h1 class="heading">Phishing Simulator</h1>
         <h2 class="sub-heading">
-          Answer a few questions and receive a privacy score and
-          recommendations.
+          Attempt to determine whether the message/email generated is safe or a
+          phishing attempt
         </h2>
-        <h3 class="notice">
-          For the most accurate results, please answer each question honestly.
-        </h3>
-        <button class="begin-btn" onclick="beginCheckup()">
-          Start Checkup
-        </button>
+        <button class="begin-btn" onclick="beginSimulator()">Start</button>
       </section>
     </main>
 
     <script type="module" src="../../components/sidebar.js"></script>
     <script type="module" src="../../components/main-header.js"></script>
-    <script type="module" src="../../scripts/checkup.js"></script>
+    <script type="module" src="../../scripts/phishingSim.js"></script>
   </body>
 </html>

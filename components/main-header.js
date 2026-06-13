@@ -38,7 +38,7 @@ document.getElementById("main-header").innerHTML = `
   <div class="buttons">
     <a class="feature-a" href="${base}pages/dashboard/checkup.html">Privacy Checkup</a>
     <a class="feature-a" href="${base}pages/dashboard/passwordGenerator.html">Password Generator</a>
-    <a class="feature-a" href="${base}pages/phishingSim.html">Phishing Simulator</a>
+    <a class="feature-a" href="${base}pages/dashboard/phishingSim.html">Phishing Simulator</a>
   </div>
 
   <button class="sign-out-btn" id="sign-out-btn">

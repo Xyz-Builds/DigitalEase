@@ -53,7 +53,7 @@ document.getElementById("sidebar").innerHTML = `
   <div class="side-buttons">
     <a class="side-a" href="${base}pages/dashboard/passwordGenerator.html"><button class="side-btn"><span class="ms">password</span>Password Generator</button></a>
     <a class="side-a" href="${lessonHref}"><button class="side-btn"><span class="ms">book_ribbon</span>Lessons</button></a>
-    <a class="side-a"><button class="side-btn"><span class="ms">gpp_maybe</span>Phishing Simulator</button></a>
+    <a class="side-a" href="${base}pages/dashboard/phishingSim.html"><button class="side-btn"><span class="ms">gpp_maybe</span>Phishing Simulator</button></a>
     <a class="side-a" href="${base}pages/dashboard/vault.html"><button class="side-btn"><span class="ms">mobile_lock_landscape</span>Vault</button></a>
   </div>
 

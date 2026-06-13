@@ -1,0 +1,153 @@
+.simulator-wrap {
+  max-width: 850px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 20px;
+  color: white;
+}
+
+.progress {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #9ca3af;
+}
+
+.email_field {
+  background: #1f2937;
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.header-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.header-wrap h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.email-divider {
+  border: none;
+  height: 1px;
+  background: #374151;
+  margin: 1rem 0;
+}
+
+.subject {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.email-body {
+  line-height: 1.7;
+  color: #d1d5db;
+}
+
+.answer-wrap {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.answer-btn {
+  flex: 1;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.answer-btn:hover {
+  transform: translateY(-2px);
+}
+
+.answer-btn[data-answer="Safe"] {
+  background: #22c55e;
+  color: white;
+}
+
+.answer-btn[data-answer="Suspicious"] {
+  background: #f59e0b;
+  color: white;
+}
+
+.answer-btn[data-answer="Phishing"] {
+  background: #ef4444;
+  color: white;
+}
+
+.feedback-flags {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #1f2937;
+  border-radius: 12px;
+}
+
+.feedback-flags ul {
+  margin-top: 0.75rem;
+  padding-left: 1.25rem;
+}
+
+.feedback-flags li {
+  margin-bottom: 0.5rem;
+}
+
+.feedback-explanation {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #1f2937;
+  border-radius: 12px;
+}
+
+.next-btn {
+  width: 100%;
+  margin-top: 1.5rem;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem;
+  background: #84cc16;
+  color: black;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.next-btn:hover {
+  opacity: 0.9;
+}
+
+.score {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #84cc16;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.ms {
+  color: #84cc16;
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 700px) {
+  .answer-wrap {
+    flex-direction: column;
+  }
+
+  .simulator-wrap {
+    padding: 1rem;
+  }
+
+  .score {
+    font-size: 3rem;
+  }
+}
