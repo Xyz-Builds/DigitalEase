@@ -377,7 +377,6 @@ function showFeedback(answer) {
 
 async function showResults() {
   const percentage = Math.round((score / scenarios.length) * 100);
-  simulatorCard.classList.toggle("results");
 
   if (user) {
     const { error } = await supabase.from("user_stats").upsert(
@@ -416,7 +415,12 @@ async function showResults() {
 
     <div class="result-grade">
       ${grade}
-    </div> 
+    </div>
+    
+    <hr class="grade-divider">
+
+    <a class="dashboard-redirect" href="dashboard.html">Dashboard</a>
+    <h3 class="retake-btn" onclick="window.location.reload()"><span class="ms">Refresh</span> Retake</h3>
   `;
 }
 

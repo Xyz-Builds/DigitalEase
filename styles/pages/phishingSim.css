@@ -384,6 +384,38 @@ main {
   line-height: 1.8;
 }
 
+.grade-divider {
+  width: 70%;
+  justify-self: center;
+  border: 1px rgb(255, 255, 255, 0.6) solid;
+  margin-block: 10px;
+}
+
+.dashboard-redirect {
+  color: white;
+  font-family: Geist;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 16px;
+}
+
+.retake-btn {
+  color: #7fff00;
+  font-family: Geist;
+  display: flex;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 16px;
+  transition: gap 0.2s ease-in-out;
+}
+
+.retake-btn:hover {
+  gap: 1rem;
+}
+
 @media (max-width: 768px) {
   .simulator-wrap {
     padding: 1.5rem;
