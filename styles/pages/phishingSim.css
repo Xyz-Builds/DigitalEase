@@ -8,6 +8,7 @@ main {
 .simulator-wrap {
   width: 100%;
   max-width: 1000px;
+  height: fit-content;
 
   background: #272b31;
 
@@ -20,11 +21,6 @@ main {
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.02),
     0 0 80px rgba(132, 255, 0, 0.05);
-}
-
-.simulator-wrap.results {
-  height: 60%;
-  width: 80%;
 }
 
 .heading {
