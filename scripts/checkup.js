@@ -1,6 +1,7 @@
 const base = new URL("../", import.meta.url).href;
 
 const { supabase } = await import(`${base}scripts/supabase.js`);
+import { updateStreak } from "../scripts/updateStreak.js";
 
 const checkupCard = document.querySelector(".checkup-wrap");
 
@@ -164,6 +165,8 @@ async function showResults() {
     (total, question) => total + question.points,
     0,
   );
+
+  await updateStreak();
 
   const percentage = Math.round((score / maxScore) * 100);
 

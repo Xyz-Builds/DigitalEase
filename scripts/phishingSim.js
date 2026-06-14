@@ -1,8 +1,13 @@
 const simulatorCard = document.querySelector(".simulator-wrap");
 
 import { supabase } from "../scripts/supabase.js";
+import { updateStreak } from "../scripts/updateStreak.js";
 
 const { data, error } = await supabase.auth.getUser();
+
+if (error) {
+  console.error(error);
+}
 
 const user = data?.user || null;
 
@@ -405,6 +410,8 @@ async function showResults() {
   } else {
     grade = "Needs Practice";
   }
+
+  await updateStreak();
 
   simulatorCard.innerHTML = `
     <h1 class="result_h1">Your Result</h1>

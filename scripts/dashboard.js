@@ -118,3 +118,15 @@ if (data?.safety_score >= 85) {
     Your online accounts may be vulnerable to threats.
   `;
 }
+
+const streakElement = document.getElementById("streakElement");
+
+const { data: streakData } = await supabase
+  .from("user_stats")
+  .select("streak")
+  .eq("user_id", user.id)
+  .single();
+
+if (streakElement) {
+  streakElement.textContent = streakData?.streak || 0;
+}

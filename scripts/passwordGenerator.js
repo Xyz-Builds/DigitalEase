@@ -1,4 +1,5 @@
 import { supabase } from "../scripts/supabase.js";
+import { updateStreak } from "../scripts/updateStreak.js";
 
 const generatedPass = document.getElementById("generatedPass");
 const saveVault = document.getElementById("savePass");
@@ -50,7 +51,10 @@ async function updatePassword() {
 
 updatePassword();
 
-generateBtn.addEventListener("click", updatePassword);
+generateBtn.addEventListener("click", async () => {
+  await updatePassword();
+  await updateStreak();
+});
 
 copyBtn.addEventListener("click", async () => {
   await navigator.clipboard.writeText(generatedPass.textContent);

@@ -1,5 +1,6 @@
 import { supabase } from "../scripts/supabase.js";
 import { lessons } from "../scripts/lessonsData.js";
+import { updateStreak } from "../scripts/updateStreak.js";
 
 const {
   data: { user },
@@ -85,6 +86,8 @@ async function completeLessonFunc() {
     completeLessonBtn.textContent = "Completed ✓";
     completeLessonBtn.disabled = true;
   }
+
+  await updateStreak();
 }
 
 completeLessonBtn.addEventListener("click", completeLessonFunc);
