@@ -36,5 +36,6 @@ export async function signUpWithEmail() {
     email: email,
   });
 
-  window.location.href = "dashboard/dashboard.html";
+  window.location.href =
+    "https://xyz-builds.github.io/DigitalEase/pages/dashboard/dashboard.html";
 }

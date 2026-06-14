@@ -21,7 +21,8 @@ export async function signInWithEmail() {
     return;
   }
 
-  window.location.href = "dashboard.html";
+  window.location.href =
+    "https://xyz-builds.github.io/DigitalEase/pages/dashboard/dashboard.html";
 }
 
 export async function sendMagicLink() {
