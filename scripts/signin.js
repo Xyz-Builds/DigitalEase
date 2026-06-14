@@ -14,21 +14,26 @@ export async function signInWithEmail() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  const { data, error } = await supabase.auth.signInWithPassword({
-    email,
-    password,
-  });
+  try {
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
 
-  console.log(data);
-  console.error(error);
+    console.log("DATA:", data);
+    console.log("ERROR:", error);
 
-  if (error) {
-    document.getElementById("error-msg").textContent = error.message;
-    return;
+    if (error) {
+      alert(error.message);
+      return;
+    }
+
+    window.location.href =
+      "https://xyz-builds.github.io/DigitalEase/pages/dashboard/dashboard.html";
+  } catch (err) {
+    console.log("CAUGHT ERROR:", err);
+    alert(err.message);
   }
-
-  window.location.href =
-    "https://xyz-builds.github.io/DigitalEase/pages/dashboard/dashboard.html";
 }
 
 export async function sendMagicLink() {
