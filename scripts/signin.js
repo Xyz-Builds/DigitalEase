@@ -14,10 +14,13 @@ export async function signInWithEmail() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  console.log("Email:", email);
-  console.log("Password:", password);
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
 
-  const { error } = await supabase.auth.signInWithPassword({ email, password });
+  console.log(data);
+  console.error(error);
 
   if (error) {
     document.getElementById("error-msg").textContent = error.message;
@@ -47,3 +50,7 @@ export async function sendMagicLink() {
   document.getElementById("error-msg").innerHTML =
     '<span class="ms">check_circle</span> Check your email for the magic link!';
 }
+
+window.signInWithEmail = signInWithEmail;
+window.signInWithGoogle = signInWithGoogle;
+window.sendMagicLink = sendMagicLink;
