@@ -57,3 +57,13 @@ main {
   font-family: Geist;
   letter-spacing: 0.15em;
 }
+
+@media (max-width: 750px) {
+  .vault-password {
+    font-size: 16px;
+  }
+
+  .vault-date {
+    font-size: 16px;
+  }
+}
