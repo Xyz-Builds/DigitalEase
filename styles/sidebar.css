@@ -20,6 +20,10 @@ nav:hover {
   width: 280px;
 }
 
+main {
+  padding-left: 86px;
+}
+
 nav::before {
   content: "";
   display: block;
