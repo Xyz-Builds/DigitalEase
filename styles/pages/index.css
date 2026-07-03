@@ -191,9 +191,9 @@ a {
 
 .marquee-item {
   margin-right: 3rem;
-  background-color: rgb(50, 52, 67);
+  background-color: rgb(8, 11, 21);
   padding-block: 20px;
-  border: 2px white solid;
+  border: 1px white solid;
   border-radius: 10px;
   text-wrap: wrap;
   padding-inline: 30px;

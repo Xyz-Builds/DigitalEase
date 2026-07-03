@@ -30,7 +30,7 @@
 }
 
 body {
-  background-color: rgb(33, 36, 40);
+  background-color: rgb(7, 7, 12);
   overflow-x: hidden;
 }
 
@@ -56,11 +56,4 @@ main {
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #d4f542;
-}
-
-@media (max-width: 768px) {
-  main {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
 }

@@ -70,7 +70,7 @@ const [firstName] = fullName.split(" ");
 const welcomeMsg = document.getElementById("welcome-msg");
 
 if (welcomeMsg) {
-  welcomeMsg.innerHTML = `Welcome <span>${firstName}</span>`;
+  welcomeMsg.innerHTML = `Welcome, <span>${firstName}</span>`;
 }
 
 const { data } = await supabase
