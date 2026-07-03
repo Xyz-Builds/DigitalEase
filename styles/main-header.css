@@ -2,14 +2,14 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
+  height: 50px;
   padding: 0 36px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(10, 14, 23, 0.72);
+  background: rgb(2 2 9);
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
@@ -17,7 +17,7 @@ header {
 }
 
 header .icon {
-  height: 24px;
+  height: 22px;
   width: auto;
 }
 
