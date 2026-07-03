@@ -5,6 +5,8 @@ main {
   gap: 48px;
 }
 
+/* Dashboard styling */
+
 .dashboard-section {
   display: flex;
   flex-direction: column;
