@@ -80,7 +80,7 @@ header .sign-out-btn {
   padding: 8px 20px;
   cursor: pointer;
   border-radius: 8px;
-  border: none;
+  border: none !important;
   background: rgb(196, 241, 32);
   color: black;
   font-family: "Geist", sans-serif;
