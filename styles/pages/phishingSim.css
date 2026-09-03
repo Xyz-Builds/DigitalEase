@@ -392,7 +392,7 @@ main {
   width: 70%;
   justify-self: center;
   border: 1px rgb(255, 255, 255, 0.6) solid;
-  margin-block: 10px;
+  margin-block: 20px;
 }
 
 .dashboard-redirect {
