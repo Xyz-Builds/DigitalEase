@@ -393,7 +393,7 @@ main {
   justify-self: center;
   border: 1px rgb(255, 255, 255, 0.6) solid;
   border-radius: 5px;
-  margin-block: 20px;
+  margin-block: 40px;
 }
 
 .dashboard-redirect {
@@ -410,6 +410,7 @@ main {
   color: #7fff00;
   font-family: Geist;
   display: flex;
+  align-items: center;
   gap: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
