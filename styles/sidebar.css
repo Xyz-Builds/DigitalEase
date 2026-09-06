@@ -169,6 +169,7 @@ nav:hover .account-info {
 nav .sign-out-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   padding: 8px 20px;
   border-radius: 8px;
@@ -182,6 +183,7 @@ nav .sign-out-btn {
   text-decoration: none;
   position: relative;
   overflow: hidden;
+  border: none !important;
   transition:
     background 0.2s,
     transform 0.15s,
