@@ -423,8 +423,6 @@ async function showResults() {
     <div class="result-grade">
       ${grade}
     </div>
-    
-    <hr class="grade-divider">
 
     <a class="dashboard-redirect" href="dashboard.html">Dashboard</a>
     <h3 class="retake-btn" onclick="window.location.reload()"><span class="ms">Refresh</span> Retake</h3>

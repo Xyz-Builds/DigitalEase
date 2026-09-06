@@ -10,30 +10,46 @@ export async function signInWithGoogle() {
   });
 }
 
-export async function signInWithEmail() {
+export async function signUpWithEmail() {
+  const firstName = document.getElementById("first-name").value;
+  const lastName = document.getElementById("last-name").value;
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  try {
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
+  const { data, error } = await supabase.auth.signUp({
+    email,
+    password,
+    options: {
+      data: {
+        first_name: firstName,
+        last_name: lastName,
+      },
+      emailRedirectTo:
+        "https://xyz-builds.github.io/DigitalEase/pages/dashboard/dashboard.html",
+    },
+  });
 
-    console.log("DATA:", data);
-    console.log("ERROR:", error);
-
-    if (error) {
-      alert(error.message);
-      return;
-    }
-
-    window.location.href =
-      "https://xyz-builds.github.io/DigitalEase/pages/dashboard/dashboard.html";
-  } catch (err) {
-    console.log("CAUGHT ERROR:", err);
-    alert(err.message);
+  if (error) {
+    document.getElementById("error-msg").textContent = error.message;
+    return;
   }
+
+  // With email confirmation enabled, the user has no session yet.
+  if (!data.session) {
+    document.getElementById("error-msg").textContent =
+      "Check your email to confirm your account!";
+    return;
+  }
+
+  await supabase.from("profiles").insert({
+    id: data.user.id,
+    first_name: firstName,
+    last_name: lastName,
+    email: email,
+  });
+
+  window.location.href =
+    "https://xyz-builds.github.io/DigitalEase/pages/dashboard/dashboard.html";
 }
 
 export async function sendMagicLink() {
