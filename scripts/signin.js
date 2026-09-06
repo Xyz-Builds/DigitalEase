@@ -1,55 +1,44 @@
 import { supabase } from "./supabase.js";
 
 export async function signInWithGoogle() {
-  await supabase.auth.signInWithOAuth({
+  const { error } = await supabase.auth.signInWithOAuth({
     provider: "google",
     options: {
       redirectTo:
         "https://xyz-builds.github.io/DigitalEase/pages/dashboard/dashboard.html",
     },
   });
+
+  if (error) {
+    console.error("Google sign-in error:", error);
+    document.getElementById("error-msg").textContent = error.message;
+  }
 }
 
-export async function signUpWithEmail() {
-  const firstName = document.getElementById("first-name").value;
-  const lastName = document.getElementById("last-name").value;
+export async function signInWithEmail() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  const { data, error } = await supabase.auth.signUp({
-    email,
-    password,
-    options: {
-      data: {
-        first_name: firstName,
-        last_name: lastName,
-      },
-      emailRedirectTo:
-        "https://xyz-builds.github.io/DigitalEase/pages/dashboard/dashboard.html",
-    },
-  });
+  try {
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
 
-  if (error) {
-    document.getElementById("error-msg").textContent = error.message;
-    return;
+    console.log("DATA:", data);
+    console.log("ERROR:", error);
+
+    if (error) {
+      document.getElementById("error-msg").textContent = error.message;
+      return;
+    }
+
+    window.location.href =
+      "https://xyz-builds.github.io/DigitalEase/pages/dashboard/dashboard.html";
+  } catch (err) {
+    console.error("CAUGHT ERROR:", err);
+    document.getElementById("error-msg").textContent = err.message;
   }
-
-  // With email confirmation enabled, the user has no session yet.
-  if (!data.session) {
-    document.getElementById("error-msg").textContent =
-      "Check your email to confirm your account!";
-    return;
-  }
-
-  await supabase.from("profiles").insert({
-    id: data.user.id,
-    first_name: firstName,
-    last_name: lastName,
-    email: email,
-  });
-
-  window.location.href =
-    "https://xyz-builds.github.io/DigitalEase/pages/dashboard/dashboard.html";
 }
 
 export async function sendMagicLink() {
