@@ -139,6 +139,13 @@ main {
   font-weight: 700;
 }
 
+.results-btns-wrap {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .result {
   color: white;
   font-family: Geist !important;
