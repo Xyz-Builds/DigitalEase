@@ -152,7 +152,7 @@ main {
 }
 
 .email_field {
-  background: #31353d;
+  background: #030914;
 
   border: 1px solid rgba(255, 255, 255, 0.06);
 
@@ -245,7 +245,7 @@ main {
   min-height: 64px;
   border: 1px solid rgba(255, 255, 255, 0.08);
 
-  background: #31353d;
+  background: #050f23;
 
   color: white;
 
