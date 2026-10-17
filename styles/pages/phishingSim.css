@@ -142,6 +142,8 @@ main {
 .results-btns-wrap {
   display: flex;
   flex-direction: column;
+  margin-block: 1rem;
+  margin-left: 0.5rem;
   gap: 0.6rem;
 }
 
@@ -149,6 +151,7 @@ main {
   color: white;
   font-family: Geist !important;
   margin-left: 0.3rem;
+  margin-block: 1rem;
 }
 
 .email_field {
@@ -288,7 +291,7 @@ main {
 .feedback-explanation {
   margin-top: 1.25rem;
 
-  background: #31353d;
+  background: #020917;
   color: white;
 
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -413,6 +416,7 @@ main {
   align-items: center;
   gap: 0.5rem;
   text-transform: uppercase;
+  cursor: pointer;
   letter-spacing: 0.15em;
   font-size: 16px;
   transition: gap 0.2s ease-in-out;
